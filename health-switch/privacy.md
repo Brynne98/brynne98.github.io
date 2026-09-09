@@ -83,13 +83,22 @@ PostHog's privacy policy: https://posthog.com/privacy
 
 ### Google AdMob (advertising)
 
-Phones without Pro see one small sponsored bar. It is served by Google
-AdMob as **non-personalised ads only**. The App never asks for
-permission to track you and never uses your device's advertising
-identifier. Google may still receive:
+Phones without Pro see one small sponsored bar, served by Google AdMob.
+The first time the bar is about to appear, the App asks two things:
 
-- Coarse device and connection information needed to serve an ad.
-- Which ad was shown and whether it was tapped.
+- Where the law requires it (the EU, the UK and some US states),
+  Google's consent form asks whether your data may be used for
+  personalised advertising. You can change that answer later under
+  **Ad choices** in the App's Settings.
+- Apple's tracking prompt asks whether the App may use your device's
+  advertising identifier (IDFA). You can change that answer later in
+  iOS **Settings → Privacy & Security → Tracking**.
+
+If you say yes, AdMob may collect your advertising identifier and usage
+data (which screens you opened, ad interactions) to pick and measure
+ads. If you say no to either, AdMob serves **non-personalised** ads
+using only contextual signals, and nothing in the App changes. Buying
+Pro removes the bar and stops all of this.
 
 Google's privacy policy: https://policies.google.com/privacy
 How Google uses data from apps that use its services:
@@ -131,8 +140,10 @@ particular installation from your contact details alone. If you tell us
 the approximate time and content of a contribution, we can find and
 remove it.
 
-You can stop advertising entirely by buying Pro. You can delete
-everything on your phone by deleting the App.
+You can opt out of personalised advertising at any time through
+Apple's tracking setting or the App's Ad choices row, stop advertising
+entirely by buying Pro, and delete everything on your phone by deleting
+the App.
 
 ## Changes to this policy
 
