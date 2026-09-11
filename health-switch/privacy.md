@@ -4,7 +4,7 @@ title: Privacy Policy — Health Switch RSA
 
 # Privacy Policy
 
-_Last updated: 9 September 2026_
+_Last updated: 11 September 2026_
 
 This privacy policy applies to the **Health Switch RSA** iOS app (the
 "App"), published on the App Store under the bundle identifier
@@ -20,7 +20,8 @@ the third-party services we use collect on our behalf.
 The directory ships inside the App and is read on your phone. Looking up
 a hospital or a number sends nothing anywhere. The App checks for newer
 directory entries when it has a connection, which sends a timestamp and
-nothing about you.
+nothing about you. It also checks for updates to the App itself; see
+EAS Update below.
 
 The numbers come from hospital directories that clinicians built on
 Accurx Switch, carried over with Accurx's permission before that service
@@ -80,6 +81,49 @@ can measure return usage. Session replay and automatic touch or text
 capture are disabled. Location lookup is disabled.
 
 PostHog's privacy policy: https://posthog.com/privacy
+
+### Sentry (crash reports)
+
+If the App crashes or hits an error, it sends a report to Sentry's
+EU-hosted service in Germany so we can fix it. A report includes:
+
+- The error and where in the App's code it happened.
+- The App version and update, device model and iOS version.
+- A random identifier for the installation, so we can tell how many
+  phones a crash affects.
+
+Crash reports never include your name, email address, the words you
+searched for, or anything shown on screen. Screen recording and
+performance tracing are switched off.
+
+Sentry's privacy policy: https://sentry.io/privacy/
+
+### EAS Observe (launch speed)
+
+The App measures how long it takes to open and sends those timings to
+Expo's EAS Observe service, so we notice if an update makes it slower.
+It sends:
+
+- Launch timings and how smoothly the first screens drew.
+- Device model, iOS version, language setting, and the App version and
+  update.
+- The server name of the slowest network request during launch.
+- Errors that happened while the App was open.
+- A random identifier for the installation and for each session.
+
+Nothing from the directory, your searches or your contributions is sent.
+
+### EAS Update and EAS Insights (app updates)
+
+The App can receive small updates without a new App Store download. When
+it opens, it asks Expo's servers whether an update is ready, sending the
+App version, the update it is running and a random identifier for the
+installation. It also sends one launch event to EAS Insights with the
+same random identifier, the App version and the iOS version, so we can
+count how many phones run each version.
+
+Expo is based in the United States. Expo's privacy policy:
+https://expo.dev/privacy
 
 ### Google AdMob (advertising)
 
