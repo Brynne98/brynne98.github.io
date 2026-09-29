@@ -6,6 +6,12 @@
         "components": [
           { "/": "/health-switch/n/*", "comment": "A shared Health Switch number" }
         ]
+      },
+      {
+        "appIDs": ["U522JHZST2.com.prince.todoapp", "U522JHZST2.com.prince.todoapp.dev"],
+        "components": [
+          { "/": "/prince-todo/join/*", "comment": "A Prince TODO family invite" }
+        ]
       }
     ]
   }

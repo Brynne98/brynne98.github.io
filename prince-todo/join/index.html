@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prince TODO</title>
+<meta name="description" content="You've been invited to a family on Prince TODO.">
+<meta name="robots" content="noindex">
+<style>
+  :root { --bg: #fafaf7; --ink: #0f172a; --ink2: #475569; --tint: #2563eb; --on-tint: #ffffff; --line: #e2e8f0; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b1220; --ink: #f8fafc; --ink2: #cbd5e1; --tint: #3b82f6; --on-tint: #ffffff; --line: #1e293b; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 -apple-system, system-ui, sans-serif; }
+  main { max-width: 420px; margin: 0 auto; padding: 64px 16px; }
+  h1 { font-size: 28px; margin: 0 0 8px; }
+  p { color: var(--ink2); margin: 0 0 24px; }
+  a.button { display: block; min-height: 50px; padding: 14px 24px; box-sizing: border-box; border-radius: 12px; text-align: center;
+             background: var(--tint); color: var(--on-tint); font-weight: 600; text-decoration: none; }
+  .code { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
+  .code b { font: 600 22px ui-monospace, SFMono-Regular, Menlo, monospace; letter-spacing: 1px; color: var(--ink); }
+</style>
+</head>
+<body>
+<main>
+  <h1>You've been invited.</h1>
+  <p>Join a family on Prince TODO to share tasks, groceries, events and ideas.</p>
+  <a class="button" id="open" href="princetodo://join">Open in Prince TODO</a>
+  <div class="code" id="code" hidden>
+    <p>Or in the app, go to Settings → Join a family and enter <b id="digits"></b></p>
+  </div>
+</main>
+<script>
+  // With the app installed, iOS opens the app and never loads this page.
+  // This is the way in when it doesn't: the app's own link, and the code
+  // to type in by hand.
+  var raw = new URLSearchParams(location.search).get('code') || '';
+  var d = raw.replace(/[^0-9A-Za-z]/g, '').toUpperCase();
+  if (d.length === 9) {
+    var code = d.slice(0, 3) + '-' + d.slice(3, 6) + '-' + d.slice(6);
+    document.getElementById('open').href = 'princetodo://join?code=' + code;
+    document.getElementById('digits').textContent = code;
+    document.getElementById('code').hidden = false;
+  }
+</script>
+</body>
+</html>
