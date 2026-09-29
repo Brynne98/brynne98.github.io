@@ -1,0 +1,12 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["U522JHZST2.com.brynne98.health-switch-rsa"],
+        "components": [
+          { "/": "/health-switch/n/*", "comment": "A shared Health Switch number" }
+        ]
+      }
+    ]
+  }
+}

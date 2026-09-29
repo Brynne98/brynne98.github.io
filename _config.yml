@@ -1,0 +1,4 @@
+# Jekyll skips folders that start with a dot. Apple reads the app-link file
+# for Health Switch RSA from /.well-known/, so that folder is published too.
+include:
+  - .well-known

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health Switch RSA</title>
+<meta name="description" content="South African hospital numbers, offline on your phone.">
+<meta name="robots" content="noindex">
+<style>
+  :root { --bg: #ffffff; --ink: #0b1026; --ink2: #4a5068; --tint: #001489; --on-tint: #ffffff; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b1026; --ink: #f2f3f7; --ink2: #a9aec2; --tint: #8fa2ff; --on-tint: #0b1026; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.5 -apple-system, system-ui, sans-serif; }
+  main { max-width: 420px; margin: 0 auto; padding: 64px 16px; text-align: center; }
+  h1 { font-size: 24px; margin: 0 0 8px; }
+  p { color: var(--ink2); margin: 0 0 24px; }
+  a.button { display: inline-block; min-height: 44px; padding: 12px 24px; box-sizing: border-box; border-radius: 22px;
+             background: var(--tint); color: var(--on-tint); font-weight: 600; text-decoration: none; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Health Switch RSA</h1>
+  <p>Someone shared a hospital number with you. Get the app to open it: South African hospital numbers, offline on your phone.</p>
+  <a class="button" href="https://apps.apple.com/za/app/id6809411710">Get it on the App Store</a>
+</main>
+<script>
+  // With the app installed, iOS opens the app and never loads this page.
+  // Without it, an iPhone goes straight on to the listing.
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    location.replace('https://apps.apple.com/za/app/id6809411710');
+  }
+</script>
+</body>
+</html>
