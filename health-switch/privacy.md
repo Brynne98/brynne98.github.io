@@ -4,11 +4,11 @@ title: Privacy Policy — Health Switch RSA
 
 # Privacy Policy
 
-_Last updated: 11 September 2026_
+_Last updated: 9 October 2026_
 
-This privacy policy applies to the **Health Switch RSA** iOS app (the
-"App"), published on the App Store under the bundle identifier
-`com.brynne98.health-switch-rsa`.
+This privacy policy applies to the **Health Switch RSA** app (the "App")
+for iPhone, published on the App Store as `com.brynne98.health-switch-rsa`,
+and for Android, published on Google Play as `com.brynne98.healthswitchrsa`.
 
 The App is a directory of South African hospital telephone numbers and
 speed dials for clinicians. It has no sign-up and no sign-in. We collect
@@ -88,7 +88,7 @@ If the App crashes or hits an error, it sends a report to Sentry's
 EU-hosted service in Germany so we can fix it. A report includes:
 
 - The error and where in the App's code it happened.
-- The App version and update, device model and iOS version.
+- The App version and update, device model and operating system version.
 - A random identifier for the installation, so we can tell how many
   phones a crash affects.
 
@@ -105,8 +105,8 @@ Expo's EAS Observe service, so we notice if an update makes it slower.
 It sends:
 
 - Launch timings and how smoothly the first screens drew.
-- Device model, iOS version, language setting, and the App version and
-  update.
+- Device model, operating system version, language setting, and the App
+  version and update.
 - The server name of the slowest network request during launch.
 - Errors that happened while the App was open.
 - A random identifier for the installation and for each session.
@@ -115,11 +115,11 @@ Nothing from the directory, your searches or your contributions is sent.
 
 ### EAS Update and EAS Insights (app updates)
 
-The App can receive small updates without a new App Store download. When
+The App can receive small updates without a new store download. When
 it opens, it asks Expo's servers whether an update is ready, sending the
 App version, the update it is running and a random identifier for the
 installation. It also sends one launch event to EAS Insights with the
-same random identifier, the App version and the iOS version, so we can
+same random identifier, the App version and the operating system version, so we can
 count how many phones run each version.
 
 Expo is based in the United States. Expo's privacy policy:
@@ -134,9 +134,12 @@ The first time the bar is about to appear, the App asks two things:
   Google's consent form asks whether your data may be used for
   personalised advertising. You can change that answer later under
   **Ad choices** in the App's Settings.
-- Apple's tracking prompt asks whether the App may use your device's
-  advertising identifier (IDFA). You can change that answer later in
-  iOS **Settings → Privacy & Security → Tracking**.
+- On iPhone, Apple's tracking prompt asks whether the App may use your
+  device's advertising identifier (IDFA). You can change that answer later
+  in iOS **Settings → Privacy & Security → Tracking**.
+- On Android, the App may read your device's advertising ID. You can
+  reset it or delete it in Android **Settings → Privacy → Ads** (on some
+  phones, **Settings → Google → Ads**).
 
 If you say yes, AdMob may collect your advertising identifier and usage
 data (which screens you opened, ad interactions) to pick and measure
@@ -151,7 +154,8 @@ https://policies.google.com/technologies/partner-sites
 ### RevenueCat (in-app purchase processing)
 
 When you buy Pro, or tap **Restore purchases**, the App uses RevenueCat
-to validate the purchase with Apple and to remember it across reinstalls.
+to validate the purchase with Apple or Google and to remember it across
+reinstalls.
 RevenueCat may collect:
 
 - An anonymous user identifier generated automatically on first launch.
@@ -163,11 +167,12 @@ typed into the App.
 
 RevenueCat's privacy policy: https://www.revenuecat.com/privacy
 
-### Apple StoreKit
+### Apple and Google Play billing
 
-Apple processes the payment through your Apple ID. We never see your
-payment details. Apple's privacy policy applies to that flow:
-https://www.apple.com/legal/privacy/
+On iPhone, Apple processes the payment through your Apple Account; on
+Android, Google Play processes it through your Google account. We never
+see your payment details. Their privacy policies apply to that flow:
+https://www.apple.com/legal/privacy/ and https://policies.google.com/privacy
 
 ## Children
 
@@ -185,7 +190,8 @@ the approximate time and content of a contribution, we can find and
 remove it.
 
 You can opt out of personalised advertising at any time through
-Apple's tracking setting or the App's Ad choices row, stop advertising
+Apple's tracking setting, Android's ads settings or the App's Ad choices
+row, stop advertising
 entirely by buying Pro, and delete everything on your phone by deleting
 the App.
 

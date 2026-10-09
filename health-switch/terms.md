@@ -4,9 +4,9 @@ title: Terms of Use — Health Switch RSA
 
 # Terms of Use
 
-_Last updated: 9 September 2026_
+_Last updated: 9 October 2026_
 
-These terms apply to the **Health Switch RSA** iOS app (the "App"),
+These terms apply to the **Health Switch RSA** app for iPhone and Android (the "App"),
 published by Brynne Prince. By using the App you agree to them.
 
 ## What the App is
@@ -40,17 +40,19 @@ agree that:
 
 ## Health Switch Pro
 
-Pro is an optional auto-renewing subscription, sold through Apple. It
+Pro is an optional auto-renewing subscription, sold through Apple on
+iPhone and through Google Play on Android. It
 removes the sponsored bar and unlocks dark mode and favourites. The
 directory stays free whether or not you buy it.
 
 - Prices are shown in the App before you buy. Payment is charged to your
-  Apple ID at confirmation of purchase.
+  Apple Account or Google account at confirmation of purchase.
 - The subscription renews automatically unless cancelled at least 24
   hours before the end of the current period. Manage or cancel it in
-  your Apple ID account settings.
-- Refunds are handled by Apple under Apple's terms.
-- Apple's Standard End User Licence Agreement also applies:
+  your Apple Account settings on iPhone, or in Google Play →
+  Payments and subscriptions on Android.
+- Refunds are handled by Apple or Google under their own terms.
+- On iPhone, Apple's Standard End User Licence Agreement also applies:
   https://www.apple.com/legal/internet-services/itunes/dev/stdeula/
 
 ## Advertising
