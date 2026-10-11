@@ -4,7 +4,7 @@ title: Terms of Use — Health Switch RSA
 
 # Terms of Use
 
-_Last updated: 9 October 2026_
+_Last updated: 12 October 2026_
 
 These terms apply to the **Health Switch RSA** app for iPhone and Android (the "App"),
 published by Brynne Prince. By using the App you agree to them.
@@ -14,6 +14,12 @@ published by Brynne Prince. By using the App you agree to them.
 The App is a shared directory of South African hospital telephone
 numbers and speed dials, kept up to date by the clinicians who use it.
 Reading the directory is free and always will be.
+
+## Who may use it
+
+The App is made for people working in South African healthcare and is
+offered in South Africa only. If you are under 18, you may use it only
+with a parent's or guardian's consent, and may not buy Pro without it.
 
 ## What the App is not
 
@@ -73,6 +79,13 @@ are not liable for any loss arising from its use or from reliance on any
 number in it. Nothing in these terms limits liability that cannot be
 limited by law, including under the Consumer Protection Act of South
 Africa where it applies.
+
+## Changes to these terms
+
+We may update these terms as the App changes or as the law requires. The
+date at the top always shows the latest version, and material changes
+will be announced in the App's release notes. Using the App after a
+change means you accept the updated terms.
 
 ## Governing law
 

@@ -4,7 +4,7 @@ title: Privacy Policy — Health Switch RSA
 
 # Privacy Policy
 
-_Last updated: 9 October 2026_
+_Last updated: 12 October 2026_
 
 This privacy policy applies to the **Health Switch RSA** app (the "App")
 for iPhone, published on the App Store as `com.brynne98.health-switch-rsa`,
@@ -14,6 +14,13 @@ The App is a directory of South African hospital telephone numbers and
 speed dials for clinicians. It has no sign-up and no sign-in. We collect
 the minimum needed for the App to work, and this page says plainly what
 the third-party services we use collect on our behalf.
+
+## Who is responsible
+
+The App is published by Brynne Prince, an individual developer in South
+Africa, who is the responsible party for this information under the
+Protection of Personal Information Act (POPIA). The App is offered in
+South Africa only. Contact details are at the end of this page.
 
 ## The directory itself
 
@@ -28,6 +35,21 @@ Accurx Switch, carried over with Accurx's permission before that service
 closed to South Africa. They are hospital extensions and ward numbers,
 not personal numbers. If you find a personal number in the directory,
 report it in the App or email us and we will remove it.
+
+## If your name or number is in the directory
+
+You do not need to use the App for this section to apply to you. Some
+entries carry the name or role of the person who answers a hospital
+line, because the hospitals' own directories listed them that way. We
+hold these work contact details for one purpose: so that healthcare
+workers can reach the right service quickly. We do not use them for
+anything else, sell them, or send them to advertisers or to the
+analytics services below.
+
+If an entry names you, or lists a number you do not want listed, email
+us at the address at the end of this page, or report the number in the
+App. We will remove or correct it, and you do not have to give a
+reason.
 
 ## Data stored on your device
 
@@ -174,6 +196,18 @@ Android, Google Play processes it through your Google account. We never
 see your payment details. Their privacy policies apply to that flow:
 https://www.apple.com/legal/privacy/ and https://policies.google.com/privacy
 
+## How long we keep things
+
+- **Directory entries and their history:** for as long as the directory
+  exists, so a bad edit can be put back. An entry is removed sooner when
+  it is reported as personal or the person it names asks.
+- **Feedback you send:** kept so we can act on it, and deleted when you
+  ask.
+- **Analytics, crash and launch-speed reports:** held by PostHog, Sentry
+  and Expo for those services' own retention periods. We keep no copies.
+- **Purchase records:** held by RevenueCat, Apple and Google for as long
+  as the subscription and the law require.
+
 ## Children
 
 The App is made for clinicians and is not directed at children under 13.
@@ -181,8 +215,7 @@ We do not knowingly collect any data from children.
 
 ## Your rights
 
-Under the Protection of Personal Information Act (POPIA) and similar laws
-elsewhere you may ask what we hold about you, ask for it to be corrected
+Under the Protection of Personal Information Act (POPIA) you may ask what we hold about you, ask for it to be corrected
 or deleted, and object to its processing. Because nothing we hold is
 linked to your name or email address, we may not be able to find a
 particular installation from your contact details alone. If you tell us
