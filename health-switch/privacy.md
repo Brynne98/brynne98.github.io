@@ -199,12 +199,18 @@ https://www.apple.com/legal/privacy/ and https://policies.google.com/privacy
 ## How long we keep things
 
 - **Directory entries and their history:** for as long as the directory
-  exists, so a bad edit can be put back. An entry is removed sooner when
-  it is reported as personal or the person it names asks.
-- **Feedback you send:** kept so we can act on it, and deleted when you
+  exists, so a bad edit can be put back. Nothing on our server is deleted
+  automatically. An entry is removed sooner when it is reported as
+  personal or the person it names asks.
+- **Feedback you send:** kept until we remove it, and deleted when you
   ask.
-- **Analytics, crash and launch-speed reports:** held by PostHog, Sentry
-  and Expo for those services' own retention periods. We keep no copies.
+- **Usage analytics (PostHog):** one year.
+- **Crash reports (Sentry):** up to 90 days.
+- **Launch-speed reports (EAS Observe):** about 90 days.
+- **App-version counts (EAS Insights):** for Expo's own retention
+  period.
+
+We keep no copies of what those services hold.
 - **Purchase records:** held by RevenueCat, Apple and Google for as long
   as the subscription and the law require.
 
