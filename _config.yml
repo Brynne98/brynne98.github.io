@@ -2,3 +2,7 @@
 # for Health Switch RSA from /.well-known/, so that folder is published too.
 include:
   - .well-known
+
+# Repo notes, not a page.
+exclude:
+  - CLAUDE.md
