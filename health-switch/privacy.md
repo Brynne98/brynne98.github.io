@@ -4,7 +4,7 @@ title: Privacy Policy — Health Switch RSA
 
 # Privacy Policy
 
-_Last updated: 12 October 2026_
+_Last updated: 17 October 2026_
 
 This privacy policy applies to the **Health Switch RSA** app (the "App")
 for iPhone, published on the App Store as `com.brynne98.health-switch-rsa`,
@@ -20,7 +20,33 @@ the third-party services we use collect on our behalf.
 The App is published by Brynne Prince, an individual developer in South
 Africa, who is the responsible party for this information under the
 Protection of Personal Information Act (POPIA). The App is offered in
-South Africa only. Contact details are at the end of this page.
+South Africa only. Brynne Prince is also the Information Officer: send
+any privacy request or complaint to brynneprince98@gmail.com.
+
+## No patient information
+
+The App never asks for patient information and must not hold any. Do not
+type patient names, folder numbers, diagnoses or other health information
+into a number, a report, an idea or the Feedback screen. If any reaches our
+server, we delete it.
+
+## Why we use your information
+
+POPIA lets us process personal information only for a lawful reason. Ours
+are:
+
+- **To run the App and the shared directory** (contributions, reports,
+  feedback, purchases): needed to provide the service you asked for.
+- **To fix crashes, keep the App fast and see which parts are used**
+  (Sentry, EAS Observe, EAS Insights, PostHog): our legitimate interest in
+  keeping a medical directory reliable. You may object; see Your rights.
+- **To show ads to phones without Pro** (AdMob): personalised ads only with
+  your consent through the tracking prompt or the consent form; otherwise
+  non-personalised ads, as our legitimate interest in keeping the directory
+  free.
+
+Giving us information is voluntary. You can read the whole directory
+without contributing, sending feedback or buying anything.
 
 ## The directory itself
 
@@ -95,6 +121,9 @@ gaps. These events include:
 - That a hospital was opened, a number was dialled, copied or shared,
   an edit or report was made, or the paywall was shown.
 - That a search found nothing, and how many characters were typed.
+- How far a list was scrolled.
+- That a purchase was started, made, cancelled, failed or restored, and
+  which plan.
 
 We never send the words you searched for, because staff names are in
 this data. We never send your name, email address or advertising
@@ -165,7 +194,8 @@ The first time the bar is about to appear, the App asks two things:
 
 If you say yes, AdMob may collect your advertising identifier and usage
 data (which screens you opened, ad interactions) to pick and measure
-ads. If you say no to either, AdMob serves **non-personalised** ads
+ads. Whatever you answer, AdMob also sees your IP address, which gives an
+approximate location (about city level), to serve ads and stop fraud. If you say no to either, AdMob serves **non-personalised** ads
 using only contextual signals, and nothing in the App changes. Buying
 Pro removes the bar and stops all of this.
 
@@ -196,6 +226,31 @@ Android, Google Play processes it through your Google account. We never
 see your payment details. Their privacy policies apply to that flow:
 https://www.apple.com/legal/privacy/ and https://policies.google.com/privacy
 
+## Who we share it with
+
+Only the services named above, and only for the purposes given for each.
+We do not sell personal information. Each service is bound by its own
+privacy policy and terms, which protect your data at least as well as this
+policy. Contributions are shown to every user of the App, as described
+above.
+
+## Sending information outside South Africa
+
+Our server (Convex) and Expo's services are in the United States.
+PostHog and Sentry use EU servers. Google, Apple and RevenueCat may
+process data in the United States and other countries. POPIA section 72
+allows this because each service is bound by its contract and its privacy
+terms to protect the data to a standard similar to POPIA, and because the
+transfer is needed to give you the service you use.
+
+## Keeping it safe
+
+All data between the App and these services travels encrypted (HTTPS).
+The anonymous identity used for contributions is kept in your phone's
+secure storage. Only the publisher has admin access to the server and the
+services' dashboards. If a breach affects your information, we will tell
+the Information Regulator and, where we can reach you, you.
+
 ## How long we keep things
 
 - **Directory entries and their history:** for as long as the directory
@@ -209,15 +264,17 @@ https://www.apple.com/legal/privacy/ and https://policies.google.com/privacy
 - **Launch-speed reports (EAS Observe):** about 90 days.
 - **App-version counts (EAS Insights):** for Expo's own retention
   period.
-
-We keep no copies of what those services hold.
 - **Purchase records:** held by RevenueCat, Apple and Google for as long
   as the subscription and the law require.
 
+We keep no copies of what those services hold.
+
 ## Children
 
-The App is made for clinicians and is not directed at children under 13.
-We do not knowingly collect any data from children.
+The App is made for clinicians and is not directed at children. POPIA
+treats anyone under 18 as a child. We do not knowingly collect personal
+information from children; if you think we have, email us and we will
+delete it.
 
 ## Your rights
 
@@ -227,6 +284,14 @@ linked to your name or email address, we may not be able to find a
 particular installation from your contact details alone. If you tell us
 the approximate time and content of a contribution, we can find and
 remove it.
+
+**To delete your data**, email brynneprince98@gmail.com. Tell us roughly
+when you sent feedback or made a change, and what it was. We will delete
+that feedback, and any entry or change you ask us to remove. Numbers that
+other clinicians rely on may stay in the shared directory unless they are
+personal or you ask us to remove a specific one. You do not need
+an account, and we never ask for proof of who you are beyond what is needed
+to find the data. We reply within 30 days.
 
 You can opt out of personalised advertising at any time through
 Apple's tracking setting, Android's ads settings or the App's Ad choices
@@ -247,5 +312,12 @@ Questions about this policy or about your data:
 **Email:** brynneprince98@gmail.com
 
 If you believe we are not complying with this policy, please email us
-first and give us a reasonable chance to respond before lodging a
-complaint with the Information Regulator of South Africa.
+first. You also have the right to complain to the Information Regulator
+of South Africa at any time:
+
+- **Email:** POPIAComplaints@inforegulator.org.za (enquiries:
+  enquiries@inforegulator.org.za)
+- **Phone:** 010 023 5200
+- **Address:** Woodmead North Office Park, 54 Maxwell Drive, Woodmead,
+  Johannesburg, 2191
+- **Website:** https://inforegulator.org.za
