@@ -62,7 +62,7 @@ duty to escalate through your hospital's own channels, stay yours.
 The App is a phone directory. It never asks for patient information and
 must not hold any. Do not type patient names, folder numbers, diagnoses
 or other health information into a number, a hospital, a report, an idea
-or the Feedback screen. We delete any we find.
+or the **Send private feedback** screen. We delete any we find.
 
 ## Contributing
 
@@ -185,7 +185,7 @@ uninterrupted service.
 provided "as is". We are not liable for any loss, injury, delay in
 patient care or other harm that comes from using the App, or from relying
 on a number in it that is wrong, missing or out of date.** This applies to
-you and to anyone you act for, including your employer and your patients.
+you and to anyone you act for, including your employer.
 
 Nothing in these terms limits our liability for loss caused by our gross
 negligence or wilful misconduct, or any liability that the law, including

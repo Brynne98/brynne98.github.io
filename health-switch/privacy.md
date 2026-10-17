@@ -28,8 +28,8 @@ any privacy request or complaint to brynneprince98@gmail.com. Our
 
 The App never asks for patient information and must not hold any. Do not
 type patient names, folder numbers, diagnoses or other health information
-into a number, a report, an idea or the Feedback screen. If any reaches our
-server, we delete it.
+into a number, a report, an idea or the **Send private feedback** screen.
+We delete any we find.
 
 ## Why we use your information
 
@@ -40,11 +40,10 @@ are:
   feedback, purchases): needed to provide the service you asked for.
 - **To fix crashes, keep the App fast and see which parts are used**
   (Sentry, EAS Observe, EAS Insights, PostHog): our legitimate interest in
-  keeping a medical directory reliable. You may object; see Your rights.
-- **To show ads to phones without Pro** (AdMob): personalised ads only with
-  your consent through the tracking prompt or the consent form; otherwise
-  non-personalised ads, as our legitimate interest in keeping the directory
-  free.
+  keeping a medical directory reliable.
+- **To show ads to phones without Pro** (AdMob): our legitimate interest
+  in keeping the directory free. See Google AdMob below for how ads use
+  your data and how to limit it.
 
 Giving us information is voluntary. You can read the whole directory
 without contributing, sending feedback or buying anything.
@@ -75,14 +74,15 @@ analytics services below.
 
 If an entry names you, or lists a number you do not want listed, email
 us at the address at the end of this page, or report the number in the
-App. We will remove or correct it, and you do not have to give a
-reason.
+App. We will remove or correct it, including from the entry's saved
+history, and you do not have to give a reason.
 
 ## Data stored on your device
 
 Your favourites, your recent hospitals, your appearance choice and which
 numbers you have reported are stored on your phone using the operating
-system's standard storage. They never leave it.
+system's standard storage. They never leave it. (Reports themselves go to
+our server; see below.)
 
 ## Contributions you make
 
@@ -98,9 +98,12 @@ What is stored on our server when you contribute:
 - The number or hospital you added or changed, and the previous value.
 - The anonymous identity of the installation that made the change.
 - The time of the change.
-- Reports that a number does not work, counted per installation.
-- Feedback you type on the Feedback screen. Please do not put personal
-  details in it.
+- Reports that a number does not work, or that a hospital should not be
+  listed, counted per installation.
+- Feature ideas you send. Everyone can see them. Your votes on ideas, and
+  reports of ideas, are counted per installation.
+- Feedback you type on the **Send private feedback** screen. Only we see
+  it. Please do not put personal details in it.
 
 Contributions are shared with every other user of the App, because that
 is the point of a shared directory. Previous values are kept so a bad
@@ -108,7 +111,7 @@ edit can be reverted. Nothing you contribute can be traced to you unless
 you put identifying details into the text yourself.
 
 Our server is hosted by Convex (convex.dev) in the United States.
-Convex's privacy policy: https://www.convex.dev/privacy
+Convex's privacy policy: https://www.convex.dev/legal/privacy
 
 ## Data collected by third-party services
 
@@ -130,7 +133,8 @@ We never send the words you searched for, because staff names are in
 this data. We never send your name, email address or advertising
 identifier. PostHog assigns a random identifier to an installation so we
 can measure return usage. Session replay and automatic touch or text
-capture are disabled. Location lookup is disabled.
+capture are disabled. PostHog receives your IP address with each event,
+but looking up a location from it is disabled.
 
 PostHog's privacy policy: https://posthog.com/privacy
 
@@ -180,7 +184,7 @@ https://expo.dev/privacy
 ### Google AdMob (advertising)
 
 Phones without Pro see one small sponsored bar, served by Google AdMob.
-The first time the bar is about to appear, the App asks two things:
+The first time the bar is about to appear, the App may ask:
 
 - Where the law requires it (the EU, the UK and some US states),
   Google's consent form asks whether your data may be used for
@@ -195,10 +199,13 @@ The first time the bar is about to appear, the App asks two things:
 
 If you say yes, AdMob may collect your advertising identifier and usage
 data (which screens you opened, ad interactions) to pick and measure
-ads. Whatever you answer, AdMob also sees your IP address, which gives an
-approximate location (about city level), to serve ads and stop fraud. If you say no to either, AdMob serves **non-personalised** ads
-using only contextual signals, and nothing in the App changes. Buying
-Pro removes the bar and stops all of this.
+ads. In South Africa Google shows no consent form, so on Android ads may
+be personalised unless you delete or reset the advertising ID as above.
+If you say no on iPhone, AdMob does not get your advertising identifier,
+but it may still use other signals to pick ads. Whatever you answer,
+AdMob also sees your IP address, which gives an approximate location
+(about city level), to serve ads and stop fraud. Nothing in the App
+changes either way. Buying Pro removes the bar and stops all of this.
 
 Google's privacy policy: https://policies.google.com/privacy
 How Google uses data from apps that use its services:
@@ -206,9 +213,9 @@ https://policies.google.com/technologies/partner-sites
 
 ### RevenueCat (in-app purchase processing)
 
-When you buy Pro, or tap **Restore purchases**, the App uses RevenueCat
-to validate the purchase with Apple or Google and to remember it across
-reinstalls.
+Each time the App opens, it asks RevenueCat whether this phone has Pro.
+RevenueCat also handles buying Pro and **Restore purchases**: it checks
+the purchase with Apple or Google and remembers it across reinstalls.
 RevenueCat may collect:
 
 - An anonymous user identifier generated automatically on first launch.
@@ -230,9 +237,8 @@ https://www.apple.com/legal/privacy/ and https://policies.google.com/privacy
 ## Who we share it with
 
 Only the services named above, and only for the purposes given for each.
-We do not sell personal information. Each service is bound by its own
-privacy policy and terms, which protect your data at least as well as this
-policy. Contributions are shown to every user of the App, as described
+We do not sell personal information. Each service processes data for us
+under its own terms and data protection agreement. Contributions are shown to every user of the App, as described
 above.
 
 ## Sending information outside South Africa
@@ -240,9 +246,8 @@ above.
 Our server (Convex) and Expo's services are in the United States.
 PostHog and Sentry use EU servers. Google, Apple and RevenueCat may
 process data in the United States and other countries. POPIA section 72
-allows this because each service is bound by its contract and its privacy
-terms to protect the data to a standard similar to POPIA, and because the
-transfer is needed to give you the service you use.
+allows this because each service is bound by its terms and data protection
+agreement to protect the data to a standard similar to POPIA.
 
 ## Keeping it safe
 
@@ -280,7 +285,9 @@ delete it.
 ## Your rights
 
 Under the Protection of Personal Information Act (POPIA) you may ask what we hold about you, ask for it to be corrected
-or deleted, and object to its processing. Because nothing we hold is
+or deleted, and object to its processing. Because we cannot tell which
+phone is yours, deleting the App is the only way to stop analytics and
+crash reports from it. Because nothing we hold is
 linked to your name or email address, we may not be able to find a
 particular installation from your contact details alone. If you tell us
 the approximate time and content of a contribution, we can find and
@@ -295,8 +302,8 @@ an account, and we never ask for proof of who you are beyond what is needed
 to find the data. We reply within 30 days.
 
 You can opt out of personalised advertising at any time through
-Apple's tracking setting, Android's ads settings or the App's Ad choices
-row, stop advertising
+Apple's tracking setting, Android's ads settings or, where it is shown,
+the App's **Ad choices** row, stop advertising
 entirely by buying Pro, and delete everything on your phone by deleting
 the App.
 

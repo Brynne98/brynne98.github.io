@@ -65,6 +65,7 @@ We keep records that these laws require, where they apply:
 | Subject | Records |
 |---|---|
 | The directory | Hospital and ward numbers, and every earlier version of each entry. |
+| Imported directory | The original Accurx export, kept as received. |
 | Contributions | Who changed what (by anonymous installation identity), when, and reports that a number does not work. |
 | Feedback and ideas | Text sent from the App's Feedback and Feature ideas screens. |
 | Sales | Subscription sales reports from Apple, Google and RevenueCat. These hold no names or card details. |
