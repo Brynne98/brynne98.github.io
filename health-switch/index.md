@@ -24,3 +24,4 @@ doesn't work**.
 
 - [Privacy Policy](privacy.html)
 - [Terms of Use](terms.html)
+- [PAIA Manual](paia.html)

@@ -21,7 +21,8 @@ The App is published by Brynne Prince, an individual developer in South
 Africa, who is the responsible party for this information under the
 Protection of Personal Information Act (POPIA). The App is offered in
 South Africa only. Brynne Prince is also the Information Officer: send
-any privacy request or complaint to brynneprince98@gmail.com.
+any privacy request or complaint to brynneprince98@gmail.com. Our
+[PAIA Manual](paia.html) lists the records we hold and how to ask for them.
 
 ## No patient information
 
