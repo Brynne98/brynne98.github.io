@@ -74,8 +74,9 @@ analytics services below.
 
 If an entry names you, or lists a number you do not want listed, email
 us at the address at the end of this page, or report the number in the
-App. We will remove or correct it, including from the entry's saved
-history, and you do not have to give a reason.
+App. We will remove it from the App or correct it, and you do not have to
+give a reason. Earlier versions of the entry stay in our records, so a bad
+edit can be undone. Ask, and we will delete those too.
 
 ## Data stored on your device
 
@@ -261,8 +262,9 @@ the Information Regulator and, where we can reach you, you.
 
 - **Directory entries and their history:** for as long as the directory
   exists, so a bad edit can be put back. Nothing on our server is deleted
-  automatically. An entry is removed sooner when it is reported as
-  personal or the person it names asks.
+  automatically. An entry is taken out of the App sooner when it is
+  reported as personal or the person it names asks, and its earlier
+  versions are deleted when that person asks.
 - **Feedback you send:** kept until we remove it, and deleted when you
   ask.
 - **Usage analytics (PostHog):** one year.
