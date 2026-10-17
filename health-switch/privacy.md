@@ -278,9 +278,10 @@ We keep no copies of what those services hold.
 ## Children
 
 The App is made for clinicians and is not directed at children. POPIA
-treats anyone under 18 as a child. We do not knowingly collect personal
-information from children; if you think we have, email us and we will
-delete it.
+treats anyone under 18 as a child. Someone under 18 may use the App only
+with a parent's or guardian's consent (see the [Terms of Use](terms.html)),
+and the App then collects the same anonymous data as for anyone else. A
+parent or guardian may email us to have it deleted.
 
 ## Your rights
 
