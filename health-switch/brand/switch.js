@@ -1,6 +1,6 @@
 // Bar at the top of each draft site to flip between the options.
 (function () {
-  var opts = ['c', 'd', 'e', 'f'];
+  var opts = ['a', 'b', 'c', 'd', 'e', 'f'];
   var here = location.pathname.split('/').filter(Boolean).slice(-1)[0];
   if (here === 'index.html') here = location.pathname.split('/').filter(Boolean).slice(-2)[0];
   var bar = document.createElement('nav');
