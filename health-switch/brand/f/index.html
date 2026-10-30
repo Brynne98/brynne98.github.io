@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Switch RSA: find the ward, call the ward</title>
+  <meta name="description" content="Search any ward, department or extension in about 80 South African hospitals and call it in two taps. Works with no signal. Free on iPhone and Android.">
+  <meta name="theme-color" content="#001489">
+  <meta property="og:title" content="Health Switch RSA">
+  <meta property="og:description" content="The hospital phone book, on your phone. Works with no signal.">
+  <meta property="og:image" content="img/icon-256.png">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preload" href="fonts/monasans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- Running head, like the top of a directory page. The guide words show the first and last hospital in view. -->
+  <header class="head" id="head">
+    <a class="brand" href="#top" aria-label="Health Switch RSA, top of page">
+      <img src="img/icon-256.png" alt="" width="34" height="34">
+      <span>Health Switch <b>RSA</b></span>
+    </a>
+    <p class="guide" id="guide" aria-hidden="true"><span id="guide-a"></span><span id="guide-b"></span></p>
+    <a class="head-cta" href="#get">Get the app</a>
+  </header>
+
+  <!-- The icon's three red tabs, cut into the left edge of the page. The tab for the section in view slides out. -->
+  <nav class="spine" aria-label="Sections">
+    <a class="spine-tab" href="#find" data-for="find"><span>Find</span><svg aria-hidden="true"><use href="img/icons.svg#magnifying-glass"/></svg></a>
+    <a class="spine-tab" href="#hospitals" data-for="hospitals"><span>Index</span><svg aria-hidden="true"><use href="img/icons.svg#book-open"/></svg></a>
+    <a class="spine-tab" href="#fix" data-for="fix"><span>Fix</span><svg aria-hidden="true"><use href="img/icons.svg#pencil-simple"/></svg></a>
+  </nav>
+
+  <main id="main">
+    <span id="top"></span>
+
+    <!-- Hero: a working lookup. The number you pick is set in full width across the foot of the page. -->
+    <section class="hero" id="find" data-tab="find" aria-labelledby="hero-h">
+      <div class="hero-copy">
+        <h1 id="hero-h" class="in">Find the ward.<br>Call the ward.</h1>
+        <p class="lede in">Search any ward, department or extension in about 80 South African hospitals. Call it in two taps, even with no signal.</p>
+        <div class="stores in">
+          <a class="store" href="https://apps.apple.com/za/app/id6809411710">
+            <svg aria-hidden="true"><use href="img/icons.svg#apple-logo"/></svg>
+            <span><small>Download on the</small>App Store</span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.brynne98.healthswitchrsa">
+            <svg aria-hidden="true"><use href="img/icons.svg#google-play-logo"/></svg>
+            <span><small>Get it on</small>Google Play</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="finder in" id="finder">
+        <div class="ftabs" role="tablist" aria-label="Search by">
+          <button role="tab" class="ftab" data-mode="ward" aria-selected="true">Ward</button>
+          <button role="tab" class="ftab" data-mode="dept" aria-selected="false">Dept</button>
+          <button role="tab" class="ftab" data-mode="ext" aria-selected="false">Ext</button>
+        </div>
+        <div class="fpage">
+          <label class="fsearch">
+            <svg aria-hidden="true"><use href="img/icons.svg#magnifying-glass"/></svg>
+            <span class="sr">Search the directory</span>
+            <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Try ICU, Radiology or 6143">
+          </label>
+          <ol class="rows" id="rows" aria-live="polite"></ol>
+          <p class="none" id="none" hidden>No match on this page. Try “Casualty”, “Theatre” or “6143”.</p>
+        </div>
+      </div>
+
+      <div class="readout in" aria-live="polite">
+        <p class="readout-name" id="ro-name">Surgical ICU, Groote Schuur Hospital</p>
+        <div class="readout-line">
+          <p class="readout-num"><span class="sr" id="ro-text">021 404 7731</span><span class="roll" id="ro-num" aria-hidden="true">021 404 7731</span></p>
+          <a class="call" id="ro-call" href="#find" aria-label="Call this number">
+            <svg aria-hidden="true"><use href="img/icons.svg#phone"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- No signal: the lift goes down, the bars go out, the lookup still works -->
+    <section class="lift" id="lift" data-tab="find" aria-labelledby="lift-h">
+      <div class="lift-inner">
+        <div class="floor" aria-hidden="true">
+          <span class="floor-num" id="floor">G</span>
+          <span class="bars" id="bars"><i></i><i></i><i></i><i></i></span>
+          <span class="floor-state" id="floor-state">4 bars</span>
+        </div>
+        <div class="lift-copy">
+          <h2 id="lift-h" class="up">No signal. Still finds it.</h2>
+          <p class="up">Every number is saved on your phone. Look up an extension in the basement, then dial it from the nearest ward phone.</p>
+          <p class="lift-row up"><span>Theatre 3, Tygerberg Hospital</span><i></i><b>Ext 8152</b></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The index: every real hospital name, set in directory columns with a big letter at each break -->
+    <section class="index" id="hospitals" data-tab="hospitals" aria-labelledby="index-h">
+      <div class="index-top">
+        <h2 id="index-h" class="up"><span id="count">77</span> hospitals, A to Z.</h2>
+        <div class="filter up">
+          <label for="hq">Find your hospital</label>
+          <input id="hq" type="search" autocomplete="off" spellcheck="false" placeholder="Name or town">
+        </div>
+      </div>
+      <div class="cols" id="cols"></div>
+      <p class="none" id="hnone" hidden>No hospital by that name yet. New ones are added as clinicians ask for them.</p>
+    </section>
+
+    <!-- Corrections in the margin: a working change history the visitor can edit and undo -->
+    <section class="fix" id="fix" data-tab="fix" aria-labelledby="fix-h">
+      <div class="fix-copy">
+        <h2 id="fix-h" class="up">Wrong number? Cross it out.</h2>
+        <p class="up">Anyone can fix a number for everyone. Every change is kept, so any edit can be put back. The app shows when a number changed, never who changed it.</p>
+      </div>
+
+      <div class="entry up">
+        <p class="entry-name">Neonatal ICU, Groote Schuur Hospital</p>
+        <p class="entry-now" id="fx-now">021 404 6182</p>
+        <p class="entry-when" id="fx-when">Changed 2 days ago</p>
+        <ol class="entry-past" id="fx-past"></ol>
+        <form class="entry-form" id="fx-form" novalidate>
+          <label for="fx-in">New number</label>
+          <div class="entry-field">
+            <input id="fx-in" inputmode="tel" autocomplete="off" placeholder="021 404 0000" aria-describedby="fx-err">
+            <button type="submit">Save</button>
+          </div>
+          <p class="entry-err" id="fx-err" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Free and Pro, set like a rate card -->
+    <section class="rates" data-tab="fix" aria-labelledby="rates-h">
+      <h2 id="rates-h" class="up">Free for every shift. Pro if you want it.</h2>
+      <table class="card up">
+        <thead>
+          <tr><th scope="col"><span class="sr">What you get</span></th><th scope="col">Free</th><th scope="col">Pro</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row"><div class="lead"><span>Every hospital and number</span><i></i></div></th><td>Yes</td><td>Yes</td></tr>
+          <tr><th scope="row"><div class="lead"><span>Search and call in two taps</span><i></i></div></th><td>Yes</td><td>Yes</td></tr>
+          <tr><th scope="row"><div class="lead"><span>Works with no signal</span><i></i></div></th><td>Yes</td><td>Yes</td></tr>
+          <tr><th scope="row"><div class="lead"><span>Fix wrong numbers</span><i></i></div></th><td>Yes</td><td>Yes</td></tr>
+          <tr><th scope="row"><div class="lead"><span>Favourites</span><i></i></div></th><td>3</td><td>No limit</td></tr>
+          <tr><th scope="row"><div class="lead"><span>Dark mode</span><i></i></div></th><td>No</td><td>Yes</td></tr>
+          <tr><th scope="row"><div class="lead"><span>Ads</span><i></i></div></th><td>Yes</td><td>None</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><th scope="row"><div class="lead"><span>Price</span><i></i></div></th><td>R0</td><td>R29.99/month<small>or R299.99/year</small></td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- Back cover -->
+    <section class="cover" id="get" data-tab="fix" aria-labelledby="get-h">
+      <div class="cover-inner">
+        <img class="cover-icon up" src="img/icon-256.png" alt="" width="128" height="128">
+        <h2 id="get-h" class="up">Next shift, skip the switchboard.</h2>
+        <p class="up">Free on iPhone and Android. South Africa only.</p>
+        <div class="stores up">
+          <a class="store" href="https://apps.apple.com/za/app/id6809411710">
+            <svg aria-hidden="true"><use href="img/icons.svg#apple-logo"/></svg>
+            <span><small>Download on the</small>App Store</span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.brynne98.healthswitchrsa">
+            <svg aria-hidden="true"><use href="img/icons.svg#google-play-logo"/></svg>
+            <span><small>Get it on</small>Google Play</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <nav aria-label="Help and legal">
+      <a href="https://brynne98.github.io/health-switch/">Support</a>
+      <a href="https://brynne98.github.io/health-switch/privacy.html">Privacy</a>
+      <a href="https://brynne98.github.io/health-switch/terms.html">Terms</a>
+    </nav>
+    <p>The hospital names on this page are real. Every phone number and extension on it is made up, so please don't call them.</p>
+    <p>© 2026 Brynne Prince</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script src="../switch.js"></script>
+</body>
+</html>

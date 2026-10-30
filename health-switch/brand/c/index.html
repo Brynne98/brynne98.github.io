@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Switch RSA: every hospital extension, on your phone</title>
+  <meta name="description" content="Search any ward, department or extension in 82 South African hospitals and call it in two taps. Works with no signal. Free on iPhone and Android.">
+  <meta name="theme-color" content="#001489">
+  <meta property="og:title" content="Health Switch RSA">
+  <meta property="og:description" content="Every hospital extension in South Africa, on your phone. Works with no signal.">
+  <meta property="og:image" content="img/icon-256.png">
+  <link rel="icon" href="img/favicon.png">
+  <link rel="preload" href="fonts/archivo.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="top">
+    <a class="brand" href="#" aria-label="Health Switch RSA, top of page">
+      <img src="img/icon-256.png" alt="" width="36" height="36">
+      <span>Health Switch <b>RSA</b></span>
+    </a>
+    <a class="top-cta" href="#get">Get the app</a>
+  </header>
+
+  <main id="main">
+    <!-- Hero: the page opens on a working directory, the red tabs are the app icon's -->
+    <section class="hero">
+      <div class="hero-copy">
+        <h1 class="reveal">The hospital switchboard, <span class="nowrap">in your pocket.</span></h1>
+        <p class="lede reveal">Search any ward, department or extension in 82&nbsp;South African hospitals. Call it in two taps, even with no signal.</p>
+        <div class="stores reveal">
+          <a class="store" href="https://apps.apple.com/za/app/id6809411710">
+            <svg aria-hidden="true"><use href="img/icons.svg#apple"/></svg>
+            <span><small>Download on the</small>App Store</span>
+          </a>
+          <a class="store" href="https://play.google.com/store/apps/details?id=com.brynne98.healthswitchrsa">
+            <svg aria-hidden="true"><use href="img/icons.svg#play"/></svg>
+            <span><small>Get it on</small>Google Play</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="book reveal" aria-label="Try the directory">
+        <div class="tabs" role="tablist" aria-label="Search by">
+          <button role="tab" class="tab" data-q="ICU" aria-selected="true">Ward</button>
+          <button role="tab" class="tab" data-q="Radiology" aria-selected="false">Dept</button>
+          <button role="tab" class="tab" data-q="3906" aria-selected="false">Ext</button>
+        </div>
+        <div class="page">
+          <label class="search">
+            <svg aria-hidden="true"><use href="img/icons.svg#search"/></svg>
+            <span class="sr">Search wards, departments or extensions</span>
+            <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Ward, department or extension">
+          </label>
+          <ol id="results" class="results" aria-live="polite"></ol>
+          <p id="empty" class="empty" hidden>Nothing here yet. Try “ICU”, “Casualty” or “3906”.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- The index: every real hospital name, grouped by letter like the tabs of a phone book -->
+    <section class="index" id="hospitals" aria-labelledby="index-h">
+      <h2 id="index-h" class="reveal">82 hospitals, from Addington to Worcester.</h2>
+      <div class="index-body">
+        <div class="letters" id="letters" role="tablist" aria-label="Hospitals by first letter"></div>
+        <ul class="names" id="names"></ul>
+      </div>
+    </section>
+
+    <!-- No signal: the bars drain, the number still comes up -->
+    <section class="offline" aria-labelledby="off-h">
+      <div class="offline-inner">
+        <div class="bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <h2 id="off-h" class="reveal">No signal.<br>Still works.</h2>
+        <p class="reveal">Every number is stored on your phone. In the basement, the lift or theatre, it opens and searches the same way.</p>
+        <div class="offline-hit reveal" aria-hidden="true">
+          <span>Casualty, Edendale Hospital</span>
+          <strong>033 395 4483</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fixed by clinicians: a working history the visitor can undo -->
+    <section class="fix" aria-labelledby="fix-h">
+      <h2 id="fix-h" class="reveal">Wrong number? Fix it for everyone.</h2>
+      <p class="reveal">Clinicians correct the directory as they use it. Every change is kept, so any edit can be put back.</p>
+
+      <div class="ledger reveal">
+        <div class="ledger-now">
+          <span class="ledger-label">Surgical ICU, Tygerberg Hospital</span>
+          <strong id="fix-now">021 938 5726</strong>
+          <span class="ledger-when" id="fix-when">Changed today</span>
+        </div>
+        <ol class="ledger-past" id="fix-past"></ol>
+      </div>
+    </section>
+
+    <!-- Free and Pro -->
+    <section class="plans" aria-labelledby="plans-h">
+      <h2 id="plans-h" class="sr">Free and Pro</h2>
+      <div class="plan">
+        <h3>Free, for good</h3>
+        <p>The whole directory, search, calling, offline use and fixing numbers. No account, no login.</p>
+      </div>
+      <div class="plan plan-pro">
+        <h3>Pro, if you want it</h3>
+        <ul>
+          <li><svg aria-hidden="true"><use href="img/icons.svg#star"/></svg>Favourites for your hospitals and numbers</li>
+          <li><svg aria-hidden="true"><use href="img/icons.svg#moon"/></svg>Dark mode</li>
+          <li><svg aria-hidden="true"><use href="img/icons.svg#noads"/></svg>No sponsored bar</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Closing call -->
+    <section class="get" id="get" aria-labelledby="get-h">
+      <div class="get-icon reveal" aria-hidden="true">
+        <img src="img/icon-256.png" alt="" width="160" height="160">
+      </div>
+      <h2 id="get-h" class="reveal">Save the numbers before your next shift.</h2>
+      <p class="reveal">Free on iPhone and Android. South Africa only.</p>
+      <div class="stores reveal">
+        <a class="store" href="https://apps.apple.com/za/app/id6809411710">
+          <svg aria-hidden="true"><use href="img/icons.svg#apple"/></svg>
+          <span><small>Download on the</small>App Store</span>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.brynne98.healthswitchrsa">
+          <svg aria-hidden="true"><use href="img/icons.svg#play"/></svg>
+          <span><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <nav aria-label="Help and legal">
+      <a href="https://brynne98.github.io/health-switch/">Support</a>
+      <a href="https://brynne98.github.io/health-switch/privacy.html">Privacy</a>
+      <a href="https://brynne98.github.io/health-switch/terms.html">Terms</a>
+    </nav>
+    <p>Hospital names on this page are real. Every phone number and extension on it is made up, so please don't call them.</p>
+    <p>© 2026 Brynne Prince</p>
+  </footer>
+
+  <script src="app.js" defer></script>
+  <script src="../switch.js"></script>
+</body>
+</html>
