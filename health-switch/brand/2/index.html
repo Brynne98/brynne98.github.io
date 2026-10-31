@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Health Switch RSA: hospital phone numbers for South African clinicians</title>
+<meta name="description" content="Ward, department and extension numbers for more than 80 South African hospitals. Search and call in two taps, with no signal. Free on iPhone and Android.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f3f5fb" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#070c2c" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/icon-192.png">
+<link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css?v=8">
+</head>
+<body>
+
+<header class="top wrap">
+  <a class="brand" href="./" aria-label="Health Switch RSA home">
+    <img src="img/icon-192.png" alt="" width="36" height="36">
+    <span>Health Switch <b>RSA</b></span>
+  </a>
+  <a class="top-link" href="#download">Get the app</a>
+</header>
+
+<main>
+
+  <!-- Hero: the country, lit by its hospitals -->
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-copy">
+      <h1 id="hero-title" class="reveal">Every ward has a number. Now&nbsp;you have it.</h1>
+      <p class="lede reveal" style="--d:1">Ward, department and extension numbers for more than 80 South African hospitals. Search, tap, and it rings.</p>
+      <div class="stores reveal" style="--d:2">
+        <a class="store" href="https://apps.apple.com/za/app/id6809411710">
+          <i class="ic ic-apple" aria-hidden="true"></i>
+          <span><small>Download on the</small>App Store</span>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.brynne98.healthswitchrsa">
+          <i class="ic ic-play" aria-hidden="true"></i>
+          <span><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </div>
+    <figure class="map-wrap" id="map">
+      <div class="map" role="img" aria-label="Map of South Africa with a light for each hospital in the app"></div>
+      <figcaption class="map-tip" aria-live="polite"><span id="map-name">Tap a light</span></figcaption>
+    </figure>
+  </section>
+
+  <!-- Night shift: one hospital, one night -->
+  <section class="night" aria-labelledby="night-title" data-step="0">
+    <div class="scene" aria-hidden="true">
+      <div class="sky"></div>
+      <div class="orb sun"></div>
+      <div class="orb moon"></div>
+      <div class="stars"></div>
+      <svg class="building" viewBox="0 0 1600 420" preserveAspectRatio="xMidYMax slice">
+        <rect class="b-far" x="150" y="290" width="240" height="120"/>
+        <rect class="b-far" x="1200" y="270" width="250" height="140"/>
+        <rect class="b-main" x="500" y="190" width="600" height="220"/>
+        <rect class="b-main" x="720" y="140" width="160" height="60"/>
+        <rect class="b-cross" x="788" y="152" width="24" height="36"/>
+        <rect class="b-cross" x="782" y="158" width="36" height="24"/>
+        <g class="windows"></g>
+        <rect class="ground" x="0" y="404" width="1600" height="16"/>
+      </svg>
+    </div>
+    <div class="wrap night-copy">
+      <h2 id="night-title">3 am, somewhere in the country.</h2>
+      <ol class="moments">
+        <li data-step="0"><time>19:00</time><p>Handover. Thirty patients, one switchboard, and it's already engaged.</p></li>
+        <li data-step="1"><time>23:40</time><p>Bed 12 needs a portable X-ray. Radiology's extension is on a list taped to a wall two floors down.</p></li>
+        <li data-step="2"><time>03:12</time><p>You search "radiology", tap twice, and it rings. The radiographer is on the way.</p></li>
+        <li data-step="3"><time>06:30</time><p>Sun on the car park. Someone fixed the number for ICU in the night. Everyone has it now.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- No signal -->
+  <section class="nosignal wrap" aria-labelledby="ns-title">
+    <div class="rings" aria-hidden="true"><span></span><span></span><span></span><i class="ic ic-nosignal"></i></div>
+    <h2 id="ns-title" class="reveal">No bars in the basement. The numbers still&nbsp;work.</h2>
+    <p class="reveal" style="--d:1">Every number is kept on your phone. Search in theatre, in the lift, or at a rural clinic with no signal at all.</p>
+  </section>
+
+  <!-- Fixed by everyone -->
+  <section class="fixes wrap" aria-labelledby="fix-title">
+    <div class="fix-copy">
+      <h2 id="fix-title" class="reveal">Wrong number? Fix it for everyone.</h2>
+      <p class="reveal" style="--d:1">The people who use a number are the first to know it changed. One fix, and every phone gets it. Each change is kept, so a mistake can be put back.</p>
+      <p class="reveal quiet" style="--d:2">The app shows when a number changed. It never shows who changed it.</p>
+    </div>
+    <div class="history" aria-label="Example change history for a labour ward number">
+      <p class="h-title">Labour ward</p>
+      <ol>
+        <li class="h-now"><span class="num" data-from="031 260 4410" data-to="031 260 4417">031 260 4417</span><span class="when">Changed 14 Oct 2026</span></li>
+        <li class="h-old"><span class="num">031 260 4410</span><span class="when">Changed 2 Mar 2026</span><span class="putback"><i class="ic ic-undo" aria-hidden="true"></i>Put back</span></li>
+        <li class="h-old"><span class="num">031 260 3982</span><span class="when">First added</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Across the country -->
+  <section class="country" aria-labelledby="country-title">
+    <div class="wrap">
+      <h2 id="country-title" class="reveal">From Groote Schuur to Mankweng.</h2>
+      <p class="reveal" style="--d:1">Academic hospitals, district hospitals and clinics, in all nine provinces.</p>
+    </div>
+    <div class="names" aria-hidden="true"><div class="names-row"></div><div class="names-row rev"></div></div>
+    <dl class="provinces wrap"></dl>
+  </section>
+
+  <!-- Free and Pro -->
+  <section class="plans wrap" aria-labelledby="plans-title">
+    <h2 id="plans-title" class="reveal">Free for every clinician.</h2>
+    <div class="plan-grid">
+      <div class="plan reveal" style="--d:1">
+        <h3>Free</h3>
+        <p>Every hospital, every number. Search, call, and fix numbers, with no signal. Shows ads.</p>
+      </div>
+      <div class="plan plan-pro reveal" style="--d:2">
+        <h3>Pro</h3>
+        <p>Takes the ads away and adds dark mode. Optional, and it keeps the app going.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Download at dawn -->
+  <section class="dawn" id="download" aria-labelledby="dl-title">
+    <div class="dawn-sun" aria-hidden="true"></div>
+    <div class="wrap dawn-copy">
+      <img class="dawn-icon reveal" src="img/icon-192.png" alt="" width="88" height="88">
+      <h2 id="dl-title" class="reveal" style="--d:1">Bring the switchboard on shift.</h2>
+      <p class="reveal" style="--d:2">Free on iPhone and Android. South Africa only.</p>
+      <div class="stores reveal" style="--d:3">
+        <a class="store" href="https://apps.apple.com/za/app/id6809411710">
+          <i class="ic ic-apple" aria-hidden="true"></i>
+          <span><small>Download on the</small>App Store</span>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.brynne98.healthswitchrsa">
+          <i class="ic ic-play" aria-hidden="true"></i>
+          <span><small>Get it on</small>Google Play</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot wrap">
+  <nav aria-label="Help and legal">
+    <a href="https://brynne98.github.io/health-switch/">Support</a>
+    <a href="https://brynne98.github.io/health-switch/privacy.html">Privacy</a>
+    <a href="https://brynne98.github.io/health-switch/terms.html">Terms</a>
+  </nav>
+  <p>The phone numbers on this page are made up. They are not real hospital numbers.</p>
+  <p>Map: South African district boundaries. Hospital lights are placed by town, not by street.</p>
+  <p>&copy; 2026 Health Switch RSA</p>
+</footer>
+
+<script src="map.js?v=8"></script>
+<script src="main.js?v=8"></script>
+  <script src="../switch.js"></script>
+</body>
+</html>
