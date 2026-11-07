@@ -11,7 +11,7 @@
 <link rel="icon" href="img/icon-192.png">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=9">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 
@@ -93,9 +93,17 @@
 
   <!-- No signal -->
   <section class="nosignal wrap" aria-labelledby="ns-title">
-    <div class="rings" aria-hidden="true"><span></span><span></span><span></span><i class="ic ic-nosignal"></i></div>
-    <h2 id="ns-title" class="reveal">No bars in the basement. The numbers still&nbsp;work.</h2>
-    <p class="reveal" style="--d:1">Every number is kept on your phone. Search in theatre, in the lift, or at a rural clinic with no signal at all.</p>
+    <div class="ns-copy">
+      <div class="rings" aria-hidden="true"><span></span><span></span><span></span><i class="ic ic-nosignal"></i></div>
+      <h2 id="ns-title" class="reveal">No bars in the basement. The numbers still&nbsp;work.</h2>
+      <p class="reveal" style="--d:1">Every number is kept on your phone. Search in theatre, in the lift, or at a rural clinic with no signal at all.</p>
+    </div>
+    <figure class="phone reveal" style="--d:2">
+      <picture>
+        <source srcset="img/app-search-dark.webp" media="(prefers-color-scheme: dark)">
+        <img src="img/app-search.webp" width="660" height="1434" loading="lazy" alt="The app searching every hospital for 292. Nineteen wards and clinics match, each with its extension.">
+      </picture>
+    </figure>
   </section>
 
   <!-- Fixed by everyone -->
@@ -131,11 +139,13 @@
     <div class="plan-grid">
       <div class="plan reveal" style="--d:1">
         <h3>Free</h3>
+        <p class="price">R0</p>
         <p>Every hospital, every number. Search, call, and fix numbers, with no signal. Shows ads.</p>
       </div>
       <div class="plan plan-pro reveal" style="--d:2">
         <h3>Pro</h3>
-        <p>Takes the ads away and adds dark mode. Optional, and it keeps the app going.</p>
+        <p class="price">R29.99 <small>a month, or R299.99 a year</small></p>
+        <p>No ads, dark mode, and favourites for the hospitals and numbers you use most.</p>
       </div>
     </div>
   </section>
@@ -175,7 +185,7 @@
   <p>&copy; 2026 Health Switch RSA</p>
 </footer>
 
-<script src="map.js?v=8"></script>
-<script src="main.js?v=9"></script>
+<script src="map.js?v=10"></script>
+<script src="main.js?v=10"></script>
 </body>
 </html>

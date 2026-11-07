@@ -27,7 +27,7 @@
     g.style.setProperty("--t", Math.round((maxX - h[0]) * 3.2 + Math.random() * 180) + "ms");
     el("circle", { class: "glow", cx: h[0], cy: h[1], r: 9 }, g);
     el("circle", { class: "dot", cx: h[0], cy: h[1], r: 3.6 }, g);
-    el("circle", { class: "hit", cx: h[0], cy: h[1], r: 11 }, g);
+    el("circle", { class: "hit", cx: h[0], cy: h[1], r: 16 }, g);
     function pick() {
       dots.forEach(function (o) { o.classList.remove("on"); });
       g.classList.add("on");
