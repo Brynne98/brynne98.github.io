@@ -45,11 +45,8 @@
   if (!still) {
     var spots = dots.slice().sort(function () { return Math.random() - 0.5; });
     var k = 0;
-    setTimeout(function () {
-      if (stopped) return;
-      spots[k++].pick();
-      tour = setInterval(function () { spots[k++ % spots.length].pick(); }, 2200);
-    }, 2600);
+    spots[k++].pick();
+    tour = setInterval(function () { spots[k++ % spots.length].pick(); }, 2200);
   }
   requestAnimationFrame(function () { requestAnimationFrame(function () { mapBox.classList.add("lit"); }); });
 

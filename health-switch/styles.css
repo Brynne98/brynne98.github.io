@@ -52,6 +52,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+/* No rubber-band bounce at the top and bottom with a mouse or trackpad. Touch screens keep it for pull to refresh. */
+@media (pointer: fine) { html, body { overscroll-behavior-y: none; } }
 body {
   margin: 0;
   background: var(--bg);
