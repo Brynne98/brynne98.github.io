@@ -23,15 +23,15 @@ and several of these files are read by Apple, Google and the App Store.
 
 # What is here
 
-- `health-switch/`: the Health Switch RSA home, privacy and terms pages (the
-  app and the App Store listing link to them), and `n/`, the page a shared
-  number's link from build 14 opens when the app is not installed. Newer
-  builds share the App Store link instead (HSR-33), but old links still
-  point here, so keep it.
+- Health Switch RSA moved to https://healthswitch.co.za on 7 Nov 2026
+  (HSR-158): home, privacy, terms and PAIA live in `website/` of the app
+  repo, served by Cloudflare Pages. `health-switch/` here was deleted,
+  including `n/`, so old shared /health-switch/n/ links now 404.
 - `hydro/`: the Hydro home, privacy and terms pages.
 - `prince-todo/`: the Prince TODO pages, and `join/`, a family invite link.
 - `.well-known/apple-app-site-association`: tells iOS which links open the
-  Health Switch or Prince TODO app instead of the browser. No file extension, and Jekyll only
+  Health Switch or Prince TODO app instead of the browser. Its Health Switch
+  entry points at the deleted /health-switch/n/; left in place, harmless. No file extension, and Jekyll only
   publishes it because `_config.yml` includes `.well-known`. Apple fetches it
   through its own CDN; after a change, check
   `https://app-site-association.cdn-apple.com/a/v1/brynne98.github.io`.
