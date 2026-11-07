@@ -5,7 +5,7 @@ title: Privacy Policy — Health Switch RSA
 
 # Privacy Policy
 
-_Last updated: 17 October 2026_
+_Last updated: 7 November 2026_
 
 This privacy policy applies to the **Health Switch RSA** app (the "App")
 for iPhone, published on the App Store as `com.brynne98.health-switch-rsa`,
@@ -18,11 +18,11 @@ the third-party services we use collect on our behalf.
 
 ## Who is responsible
 
-The App is published by Brynne Prince, an individual developer in South
-Africa, who is the responsible party for this information under the
+The App is published by Theron and Prince Solutions (Pty) Ltd, a private company in South
+Africa (registration number 2026/182827/07), which is the responsible party for this information under the
 Protection of Personal Information Act (POPIA). The App is offered in
-South Africa only. Brynne Prince is also the Information Officer: send
-any privacy request or complaint to brynneprince98@gmail.com. Our
+South Africa only. The company's director is the Information Officer: send
+any privacy request or complaint to support@healthswitch.co.za. Our
 [PAIA Manual](paia.html) lists the records we hold and how to ask for them.
 
 ## No patient information
@@ -297,7 +297,7 @@ particular installation from your contact details alone. If you tell us
 the approximate time and content of a contribution, we can find and
 remove it.
 
-**To delete your data**, email brynneprince98@gmail.com. Tell us roughly
+**To delete your data**, email support@healthswitch.co.za. Tell us roughly
 when you sent feedback or made a change, and what it was. We will delete
 that feedback, and any entry or change you ask us to remove. Numbers that
 other clinicians rely on may stay in the shared directory unless they are
@@ -321,7 +321,7 @@ be announced in the App's release notes.
 
 Questions about this policy or about your data:
 
-**Email:** brynneprince98@gmail.com
+**Email:** support@healthswitch.co.za
 
 If you believe we are not complying with this policy, please email us
 first. You also have the right to complain to the Information Regulator

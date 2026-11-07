@@ -5,10 +5,10 @@ title: Terms of Use — Health Switch RSA
 
 # Terms of Use
 
-_Last updated: 17 October 2026_
+_Last updated: 7 November 2026_
 
 These terms apply to the **Health Switch RSA** app for iPhone and Android (the "App"),
-published by Brynne Prince. By using the App you agree to them.
+published by Theron and Prince Solutions (Pty) Ltd. By using the App you agree to them.
 
 **Please read these points first.** They limit what we are responsible
 for, and the Consumer Protection Act asks us to show them to you plainly:
@@ -24,11 +24,11 @@ for, and the Consumer Protection Act asks us to show them to you plainly:
 
 ## Who we are
 
-The App is supplied by Brynne Prince, an individual (sole proprietor) in
-South Africa. We are not a company and have no registration number.
+The App is supplied by Theron and Prince Solutions (Pty) Ltd, a private company registered in South
+Africa, registration number 2026/182827/07.
 
 - **Website:** https://brynne98.github.io/health-switch/
-- **Email:** brynneprince98@gmail.com
+- **Email:** support@healthswitch.co.za
 
 We do not belong to any self-regulatory body and do not subscribe to an
 alternative dispute resolution scheme or code of conduct.
@@ -145,7 +145,7 @@ right to cancel a yearly plan early.
 
 ## Apple and Google
 
-These terms are between you and Brynne Prince, not Apple or Google. We,
+These terms are between you and Theron and Prince Solutions (Pty) Ltd, not Apple or Google. We,
 not Apple or Google, are responsible for the App, its content, its
 support and any claim about it, including a claim that it breaks the law
 or someone else's rights.
@@ -207,4 +207,4 @@ governed by the law of the Republic of South Africa.
 
 ## Contact
 
-**Email:** brynneprince98@gmail.com
+**Email:** support@healthswitch.co.za

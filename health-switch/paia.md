@@ -7,12 +7,12 @@ title: PAIA Manual — Health Switch RSA
 
 _Prepared under section 51 of the Promotion of Access to Information Act 2
 of 2000 (PAIA), following the Information Regulator's template for private
-bodies. Last updated: 17 October 2026._
+bodies. Last updated: 7 November 2026._
 
 ## 1. About this manual
 
-This manual is for Brynne Prince, a sole proprietor in South Africa who
-publishes the **Health Switch RSA** app for iPhone and Android. It says
+This manual is for Theron and Prince Solutions (Pty) Ltd (registration number
+2026/182827/07), a private company in South Africa that publishes the **Health Switch RSA** app for iPhone and Android. It says
 what records we hold, how to ask for them, and how we process personal
 information under the Protection of Personal Information Act 4 of 2013
 (POPIA).
@@ -20,9 +20,9 @@ information under the Protection of Personal Information Act 4 of 2013
 ## 2. Contact details
 
 The head of this private body, and its Information Officer under POPIA,
-is Brynne Prince. There is no Deputy Information Officer.
+is the company's director. There is no Deputy Information Officer.
 
-- **Email:** brynneprince98@gmail.com
+- **Email:** support@healthswitch.co.za
 - **Website:** https://brynne98.github.io/health-switch/
 
 ## 3. The Regulator's guide to PAIA
@@ -120,7 +120,7 @@ publisher has admin access to the server and the services' dashboards.
 1. Fill in **Form 2** (Request for Access to Record), from the
    Regulator:
    https://inforegulator.org.za/wp-content/uploads/2020/07/InfoRegSA-PAIA-Form02-Reg7.pdf
-2. Email it to brynneprince98@gmail.com with proof of identity. If you
+2. Email it to support@healthswitch.co.za with proof of identity. If you
    ask for someone else, add proof that you may act for them.
 3. Say which records you want, the form of access you want (copy, email,
    inspection), and how we should reply.
