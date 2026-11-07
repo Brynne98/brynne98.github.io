@@ -1,4 +1,162 @@
-// Health Switch RSA: patch cords that join you to the right ward.
+(function () {
+  "use strict";
+  var doc = document.documentElement;
+  doc.classList.add("js");
+  var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var NS = "http://www.w3.org/2000/svg";
+  var ZA = window.ZA;
+
+  function el(name, attrs, parent) {
+    var n = document.createElementNS(NS, name);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(n);
+    return n;
+  }
+
+  // Map: every district of South Africa, and a light for each hospital.
+  var mapBox = document.querySelector(".map");
+  var tip = document.getElementById("map-name");
+  var svg = el("svg", { viewBox: "-6 -6 " + (ZA.w + 12) + " " + (ZA.ht + 12), "aria-hidden": "true" }, mapBox);
+  var land = el("g", { class: "land" }, svg);
+  ZA.d.forEach(function (d) { el("path", { d: d }, land); });
+  var lights = el("g", { class: "lights" }, svg);
+  var maxX = Math.max.apply(null, ZA.h.map(function (h) { return h[0]; }));
+  var dots = ZA.h.map(function (h) {
+    var g = el("g", { class: "h" }, lights);
+    // Lights come on east to west, the way night crosses the country.
+    g.style.setProperty("--t", Math.round((maxX - h[0]) * 3.2 + Math.random() * 180) + "ms");
+    el("circle", { class: "glow", cx: h[0], cy: h[1], r: 9 }, g);
+    el("circle", { class: "dot", cx: h[0], cy: h[1], r: 3.6 }, g);
+    el("circle", { class: "hit", cx: h[0], cy: h[1], r: 11 }, g);
+    function pick() {
+      dots.forEach(function (o) { o.classList.remove("on"); });
+      g.classList.add("on");
+      tip.textContent = h[2];
+    }
+    function byHand() { stopTour(); pick(); }
+    g.addEventListener("mouseenter", byHand);
+    g.addEventListener("click", byHand);
+    g.pick = pick;
+    return g;
+  });
+  // Until someone points at the map, it names one hospital after another.
+  var tour = null, stopped = false;
+  function stopTour() { stopped = true; clearInterval(tour); }
+  if (!still) {
+    var spots = dots.slice().sort(function () { return Math.random() - 0.5; });
+    var k = 0;
+    setTimeout(function () {
+      if (stopped) return;
+      spots[k++].pick();
+      tour = setInterval(function () { spots[k++ % spots.length].pick(); }, 2200);
+    }, 2600);
+  }
+  requestAnimationFrame(function () { requestAnimationFrame(function () { mapBox.classList.add("lit"); }); });
+
+  // Hospital names and province counts, from the same list.
+  var names = ZA.h.map(function (h) { return h[2]; })
+    .filter(function (n, i, a) { return a.indexOf(n) === i; });
+  var rows = document.querySelectorAll(".names-row");
+  var half = Math.ceil(names.length / 2);
+  [names.slice(0, half), names.slice(half)].forEach(function (list, i) {
+    var all = still ? list : list.concat(list);
+    rows[i].innerHTML = all.map(function (n) { return "<span>" + n + "</span>"; }).join("");
+  });
+  var provinces = [
+    ["WC", "Western Cape"], ["KZN", "KwaZulu-Natal"], ["GP", "Gauteng"],
+    ["EC", "Eastern Cape"], ["MP", "Mpumalanga"], ["NW", "North West"],
+    ["FS", "Free State"], ["NC", "Northern Cape"], ["LP", "Limpopo"]
+  ];
+  document.querySelector(".provinces").innerHTML = provinces.map(function (p) {
+    var n = ZA.h.filter(function (h) { return h[3] === p[0]; }).length;
+    return "<div><dt>" + p[1] + "</dt><dd>" + n + "</dd></div>";
+  }).join("");
+
+  // Night scene: windows in the main building.
+  var win = document.querySelector(".windows");
+  var wins = [];
+  for (var r = 0; r < 6; r++) {
+    for (var c = 0; c < 14; c++) {
+      wins.push(el("rect", { class: "win", x: 522 + c * 41, y: 212 + r * 31, width: 22, height: 14, rx: 2 }, win));
+    }
+  }
+  [[176, 310, 5, 3], [1224, 292, 5, 4]].forEach(function (b) {
+    for (var r2 = 0; r2 < b[3]; r2++) for (var c2 = 0; c2 < b[2]; c2++) {
+      wins.push(el("rect", { class: "win", x: b[0] + c2 * 44, y: b[1] + r2 * 24, width: 20, height: 11, rx: 2 }, win));
+    }
+  });
+  var order = wins.map(function (w, i) { return i; }).sort(function () { return Math.random() - 0.5; });
+  var share = [0.18, 0.55, 0.85, 0.3];
+  var night = document.querySelector(".night");
+  var moments = night.querySelectorAll(".moments li");
+  function setStep(s) {
+    night.setAttribute("data-step", s);
+    moments.forEach(function (m, i) { m.classList.toggle("on", i === s); });
+    var lit = Math.round(wins.length * share[s]);
+    order.forEach(function (idx, k) { wins[idx].classList.toggle("lit", k < lit); });
+  }
+  setStep(0);
+
+  // Change history: the current number is typed in over the old one.
+  var now = document.querySelector(".h-now .num");
+  function retype() {
+    var from = now.getAttribute("data-from"), to = now.getAttribute("data-to");
+    var keep = 0;
+    while (from[keep] === to[keep]) keep++;
+    var i = from.length;
+    now.innerHTML = from;
+    var t = setInterval(function () {
+      if (i > keep) { i--; now.innerHTML = from.slice(0, i) + '<span class="tw"></span>'; return; }
+      if (keep < to.length) { keep++; now.innerHTML = to.slice(0, keep) + (keep < to.length ? '<span class="tw"></span>' : ""); return; }
+      clearInterval(t);
+    }, 160);
+  }
+
+  // One observer for reveals, the night steps and the one-off effects.
+  if (!("IntersectionObserver" in window)) {
+    document.querySelectorAll(".reveal").forEach(function (n) { n.classList.add("in"); });
+    return;
+  }
+  var seen = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add("in");
+      if (e.target.classList.contains("history") && !still) setTimeout(retype, 400);
+      seen.unobserve(e.target);
+    });
+  }, { threshold: 0.25 });
+  document.querySelectorAll(".reveal, .nosignal, .history").forEach(function (n) { seen.observe(n); });
+
+  // The night plays through once each time the scene comes into view.
+  // A moment can be picked by hand, which stops the play.
+  var timer = null;
+  function play() {
+    clearInterval(timer);
+    var s = 0;
+    setStep(0);
+    timer = setInterval(function () {
+      s++;
+      if (s > 3) { clearInterval(timer); return; }
+      setStep(s);
+    }, 2600);
+  }
+  moments.forEach(function (m, i) {
+    m.tabIndex = 0;
+    function pick() { clearInterval(timer); setStep(i); }
+    m.addEventListener("click", pick);
+    m.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); } });
+  });
+  if (still) { setStep(2); return; }
+  var playing = false;
+  new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting && !playing) { playing = true; play(); }
+      if (!e.isIntersecting) { playing = false; clearInterval(timer); }
+    });
+  }, { threshold: 0.6 }).observe(document.querySelector(".scene"));
+})();
+
+// Switchboard: a patch cord that joins the headline to the right ward.
 // One small rope simulation (verlet points + length constraints) drives every cord.
 (() => {
   "use strict";
@@ -15,24 +173,6 @@
     ["Paeds", "8659"], ["Labour ward", "7879"], ["Lab", "9729"],
     ["Burns unit", "3694"], ["Neonatal", "9879"], ["Switchboard", "7725"],
   ];
-
-  const HOSPITALS = [
-    "Addington", "Beaufort West", "Caledon", "Cecilia Makiwane", "Chris Hani Baragwanath",
-    "Dora Nginza", "Dr Pixley ka Isaka Seme", "Du Noon CHC", "Edendale", "Edenvale",
-    "Eerste River", "Evander", "False Bay", "Frere", "George Regional", "Groote Schuur",
-    "Heideveld", "Helen Joseph", "Inanda C CHC", "Inkosi Albert Luthuli", "Kalafong",
-    "Karl Bremer", "Khayelitsha District", "King Dinuzulu", "King Edward VIII", "Klerksdorp",
-    "Lentegeur", "Livingstone", "Madwaleni", "Mahatma Gandhi", "Mahikeng Provincial",
-    "Mankweng", "Mapulaneng", "Mitchells Plain District", "Mowbray Maternity",
-    "Nelson Mandela Academic", "New Somerset", "Niemeyer Memorial", "Northdale",
-    "Oudtshoorn", "Paarl Provincial", "Pelonomi", "Pholosong", "Polokwane",
-    "Port Elizabeth Provincial", "Port Shepstone", "Prince Mshiyeni", "Red Cross Children's",
-    "RK Khan", "Robert Mangaliso Sobukwe", "Rob Ferreira", "Sabie", "Sebokeng", "Shongwe",
-    "Stikland", "Taung District", "Tembisa", "Thelle Mogoerane", "Themba", "Tshepong",
-    "Tygerberg", "Uitenhage Provincial", "Universitas", "Victoria", "Wentworth", "Witbank",
-    "Worcester Provincial", "Umphumulo", "Isilimela", "Montana", "Wilgers", "Pretoria East",
-  ];
-
   const svgEl = (tag, attrs, parent) => {
     const el = document.createElementNS(NS, tag);
     for (const k in attrs) el.setAttribute(k, attrs[k]);
@@ -41,7 +181,6 @@
   };
   const dist = (a, b) => Math.hypot(a.x - b.x, a.y - b.y);
   const ease = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-  const rand = (a, b) => a + Math.random() * (b - a);
 
   // ---------- Stage: one svg layer over one part of the page ----------
   const stages = [];
@@ -218,10 +357,10 @@
   }
   document.addEventListener("visibilitychange", () => { if (!document.hidden) wake(); });
 
-  // ---------- Hero: the headline patched into a ward ----------
+  // ---------- Switchboard: the headline patched into a ward ----------
   {
-    const hero = document.querySelector(".hero");
-    const list = document.getElementById("hero-jacks");
+    const hero = document.querySelector(".patch");
+    const list = document.getElementById("jacks");
     const wardBox = hero.querySelector(".ward");
     const jacks = WARDS.map(([name, ext], i) => {
       const li = document.createElement("li");
@@ -268,166 +407,6 @@
         if (!stage.visible || document.hidden || performance.now() < hold) return;
         patch((cur + 1) % WARDS.length);
       }, 3200);
-    }
-  }
-
-  // ---------- Offline wall: cords keep patching with no data ----------
-  {
-    const section = document.querySelector(".offline");
-    const wall = document.getElementById("wall");
-    const items = HOSPITALS.map((name) => {
-      const li = document.createElement("li");
-      li.innerHTML = `<span class="socket" aria-hidden="true"></span><span>${name}</span>`;
-      wall.appendChild(li);
-      return li;
-    });
-    const stage = new Stage(wall.parentElement.querySelector(".cords"));
-    const anchors = items.map((li) => stage.anchor(li.querySelector(".socket")));
-    const busy = new Set();
-    const shown = () => items.map((li, i) => i).filter((i) => items[i].offsetParent && !busy.has(i));
-
-    function pickPair() {
-      const free = shown();
-      for (let tries = 0; tries < 30; tries++) {
-        const a = free[Math.floor(Math.random() * free.length)];
-        const near = free.filter((b) => { const d = dist(anchors[a], anchors[b]); return b !== a && d > 110 && d < 380 && Math.abs(anchors[a].x - anchors[b].x) > 90; });
-        if (near.length) return [a, near[Math.floor(Math.random() * near.length)]];
-      }
-      return null;
-    }
-    function connect(a, b, instant) {
-      busy.add(a); busy.add(b);
-      items[a].classList.add("is-live");
-      const cord = new Cord(stage, { head: anchors[a], tail: null, segs: 18, width: 5, slack: 1.2, freeLen: 60, plugHead: true, scale: 0.72 });
-      cord.moveTail(anchors[b], {
-        dur: instant ? 0 : 820, lift: 90,
-        done: () => items[b].classList.add("is-live"),
-      });
-      return cord;
-    }
-    function hangUp(cord, a, b) {
-      items[b].classList.remove("is-live");
-      cord.release();
-      setTimeout(() => {
-        cord.g.classList.add("cord-fade");
-        items[a].classList.remove("is-live");
-        setTimeout(() => { cord.remove(); busy.delete(a); busy.delete(b); }, 650);
-      }, 900);
-    }
-    function spawn() {
-      const max = innerWidth < 600 ? 3 : 6;
-      if (stage.cords.length >= max) return;
-      const pair = pickPair();
-      if (!pair) return;
-      const [a, b] = pair;
-      const cord = connect(a, b, false);
-      setTimeout(() => hangUp(cord, a, b), rand(2600, 4200));
-    }
-
-    if (reduce) {
-      for (let k = 0; k < 4; k++) { const pair = pickPair(); if (pair) connect(pair[0], pair[1], true); }
-      stage.settle();
-    } else {
-      let timer = 0;
-      stage.onVisible = (on) => {
-        section.classList.toggle("is-running", on);
-        clearInterval(timer);
-        if (on) { spawn(); timer = setInterval(spawn, 750); }
-      };
-    }
-  }
-
-  // ---------- Fix: move off the wrong number, and back ----------
-  {
-    const board = document.querySelector(".fix-board");
-    const btn = document.getElementById("fix-toggle");
-    const hist = document.getElementById("history");
-    const oldJ = board.querySelector('[data-num="old"]');
-    const newJ = board.querySelector('[data-num="new"]');
-    const stage = new Stage(board.querySelector(".cords"));
-    const head = stage.anchor(board.querySelector('[data-anchor="fix-head"]'));
-    const oldS = stage.anchor(oldJ.querySelector(".socket"));
-    const newS = stage.anchor(newJ.querySelector(".socket"));
-    const cord = new Cord(stage, { head, tail: oldS, segs: 20, width: 6, slack: 1.25 });
-    oldJ.classList.add("is-live");
-    let fixed = false, auto = true;
-    if (reduce) stage.settle(); else for (let i = 0; i < 240; i++) cord.step(0);
-
-    function note(text) {
-      const now = new Date();
-      const li = document.createElement("li");
-      li.innerHTML = `<b>Today ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}</b> ${text}`;
-      hist.prepend(li);
-      while (hist.children.length > 4) hist.lastElementChild.remove();
-    }
-    function toggle() {
-      fixed = !fixed;
-      oldJ.classList.remove("is-live"); newJ.classList.remove("is-live");
-      oldJ.classList.toggle("is-wrong", fixed);
-      const to = fixed ? newJ : oldJ;
-      cord.moveTail(fixed ? newS : oldS, { dur: 800, lift: 70, done: () => { to.classList.add("is-live"); if (reduce) stage.settle(); } });
-      note(fixed ? "Changed to 021 938 4417" : "Put back to 021 938 4471");
-      btn.textContent = fixed ? "Put it back" : "Fix the number";
-    }
-    btn.addEventListener("click", () => { auto = false; toggle(); });
-    stage.onVisible = (on) => {
-      if (on && auto && !reduce) { auto = false; setTimeout(() => { if (!fixed) toggle(); }, 900); }
-    };
-  }
-
-  // ---------- Get: a loose cord that plugs into a store button ----------
-  {
-    const section = document.querySelector(".get");
-    const stage = new Stage(section.querySelector(".cords"));
-    const top = stage.anchor(null, (r) => ({ x: r.width / 2, y: -12 }));
-    const hang = () => Math.min(stage.rect.height * 0.3, 190);
-    const cord = new Cord(stage, { head: top, tail: null, segs: 24, width: 7, freeLen: hang() });
-    // start swinging so the cord reads as loose
-    cord.pts.forEach((p, i) => { p.px = p.x - i * 0.9; });
-    if (reduce) stage.settle(); else for (let i = 0; i < 20; i++) cord.step(0);
-
-    const plugs = [...section.querySelectorAll("[data-plug]")];
-    const holes = plugs.map((el) => stage.anchor(el, (r) => {
-      const b = el.getBoundingClientRect();
-      return { x: b.left - r.left + b.width / 2, y: b.top - r.top + 3 };
-    }));
-    let plugged = -1;
-    const fine = matchMedia("(pointer: fine)").matches;
-
-    if (!reduce && fine) {
-      section.addEventListener("pointermove", (e) => {
-        if (plugged >= 0) return;
-        stage.rect = section.getBoundingClientRect();
-        const pt = { x: e.clientX - stage.rect.left, y: e.clientY - stage.rect.top };
-        if (!cord.tail) cord.tail = { x: cord.pts[cord.n - 1].x, y: cord.pts[cord.n - 1].y };
-        cord.follow = pt;
-        cord.freeLen = Math.max(hang(), dist(top, pt) * 1.08);
-        wake();
-      });
-      section.addEventListener("pointerleave", () => {
-        if (plugged >= 0) unplug();
-        cord.freeLen = hang();
-        cord.release();
-      });
-      plugs.forEach((el, i) => {
-        el.addEventListener("pointerenter", () => {
-          plugged = i;
-          cord.follow = null;
-          stage.rect = section.getBoundingClientRect();
-          stage.place(holes[i]);
-          cord.freeLen = dist(top, holes[i]) * 1.03;
-          cord.moveTail(holes[i], { dur: 260, lift: 20 });
-          el.classList.add("is-plugged");
-        });
-        el.addEventListener("pointerleave", unplug);
-      });
-    }
-    function unplug() {
-      if (plugged < 0) return;
-      plugs[plugged].classList.remove("is-plugged");
-      plugged = -1;
-      cord.tween = null;
-      cord.tail = { x: cord.pts[cord.n - 1].x, y: cord.pts[cord.n - 1].y };
     }
   }
 

@@ -12,19 +12,19 @@
   font-display: swap;
 }
 
-/* Tokens. Navy is the app icon's #001489; gold is the one accent, the colour of a lit window. */
+/* Tokens. Blue is a lighter take on the app icon's #001489; gold is the one accent, the colour of a lit window. */
 :root {
   --bg: #f3f5fb;
   --surface: #ffffff;
   --ink: #0a1240;
   --ink-2: #454d78;
   --line: rgba(10, 18, 64, 0.12);
-  --navy: #001489;
-  --land: #001489;
+  --navy: #2443d6;
+  --land: #3150dc;
   --land-edge: rgba(255, 255, 255, 0.16);
   --gold: #f4b740;
   --gold-ink: #8a5800;
-  --btn-bg: #001489;
+  --btn-bg: #2443d6;
   --btn-ink: #ffffff;
   --r: 14px;
   --wrap: 1200px;
@@ -33,17 +33,17 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #070c2c;
-    --surface: #0e1645;
+    --bg: #141d4a;
+    --surface: #1e2a63;
     --ink: #eceef8;
-    --ink-2: #a6acd0;
+    --ink-2: #b4bade;
     --line: rgba(236, 238, 248, 0.12);
-    --land: #17227a;
-    --land-edge: rgba(255, 255, 255, 0.1);
+    --land: #3349bf;
+    --land-edge: rgba(255, 255, 255, 0.14);
     --gold: #f6c255;
     --gold-ink: #f6c255;
     --btn-bg: #eceef8;
-    --btn-ink: #001489;
+    --btn-ink: #1a2f9e;
     color-scheme: dark;
   }
 }
@@ -126,10 +126,55 @@ img { display: block; }
   padding: 0.45rem 0.8rem; border-radius: 10px; background: var(--surface); border: 1px solid var(--line);
 }
 
+/* Switchboard: blue panel, red cord, from the app icon. */
+.patch {
+  --panel: #2a49dc; --panel2: #3a5ae6; --panel-ink: #f1f3ff; --panel-ink2: #c6cfff;
+  --hole: #0a1240; --rim: #4d6af0; --red: #e0362c; --red-dark: #a3201a;
+  position: relative; display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  align-items: center; gap: clamp(2rem, 6vw, 6rem); padding-block: 5rem 7rem;
+}
+@media (prefers-color-scheme: dark) { .patch { --panel: #2d43b8; --panel2: #3b53cc; --rim: #5670e8; --red: #ff4e42; } }
+.patch h2 { font-size: clamp(2.2rem, 4.4vw, 3.8rem); }
+.h-lead { display: block; }
+.ward-line { display: inline-flex; align-items: baseline; white-space: nowrap; }
+.ward { display: inline-grid; color: var(--red); overflow: hidden; padding-bottom: 0.08em; margin-bottom: -0.08em; }
+.ward > span { grid-area: 1 / 1; }
+.ward-in { animation: word-in 0.55s var(--ease) both; }
+.ward-out { animation: word-out 0.35s cubic-bezier(0.7, 0, 0.84, 0) both; }
+@keyframes word-in { from { transform: translateY(105%); } to { transform: none; } }
+@keyframes word-out { to { transform: translateY(-105%); opacity: 0; } }
+.patch-copy p { margin-bottom: 1rem; color: var(--ink-2); font-size: 1.15rem; max-width: 34ch; }
+.socket {
+  --s: 34px; display: inline-block; width: var(--s); height: var(--s); border-radius: 50%; flex: none;
+  background: radial-gradient(circle at 50% 50%, var(--hole) 0 34%, var(--rim) 36% 62%, #c9d2ff 64% 70%, var(--rim) 72%);
+  box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.35);
+}
+.socket-sm { --s: 0.42em; vertical-align: 0.08em; margin-left: 0.12em; background: radial-gradient(circle, var(--hole) 0 38%, var(--red) 42%); box-shadow: none; }
+.lamp { width: 9px; height: 9px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); transition: background 0.25s, box-shadow 0.25s; }
+.is-live .lamp { background: var(--red); box-shadow: 0 0 0 4px rgba(224, 54, 44, 0.25); }
+.board {
+  background: linear-gradient(160deg, var(--panel2), var(--panel)); border-radius: 24px; padding: clamp(20px, 3vw, 32px);
+  box-shadow: 0 30px 60px -30px rgba(36, 67, 214, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.14); color: var(--panel-ink);
+}
+.jacks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 12px; }
+.jack { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 8px 4px; border: 0; background: none; color: inherit; font: inherit; width: 100%; cursor: pointer; border-radius: 12px; }
+.jack .socket { transition: transform 0.2s; }
+.jack:hover .socket { transform: scale(1.06); }
+.jack-name { font-weight: 650; font-size: 0.95rem; line-height: 1.15; text-align: center; }
+.jack-ext { font-size: 0.8rem; color: var(--panel-ink2); font-variant-numeric: tabular-nums; height: 1em; opacity: 0; transform: translateY(-4px); transition: opacity 0.3s, transform 0.3s; }
+.jack.is-live .jack-ext { opacity: 1; transform: none; }
+.cords { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; z-index: 2; }
+.cord-shadow { fill: none; stroke: rgba(0, 6, 54, 0.25); stroke-linecap: round; stroke-linejoin: round; }
+.cord-body { fill: none; stroke: var(--red); stroke-linecap: round; stroke-linejoin: round; }
+.cord-shine { fill: none; stroke: rgba(255, 255, 255, 0.38); stroke-linecap: round; stroke-linejoin: round; }
+.plug-sleeve { fill: #12172e; }
+.plug-ring { fill: var(--red-dark); }
+.plug-tip { fill: #c9ced9; }
+
 /* Night shift: one hospital through one night */
 .night { position: relative; padding-bottom: 5rem; --sky-a: #f6a15a; --sky-b: #3b3f8f; --lit: 0.15; }
-.night[data-step="1"] { --sky-a: #2a2f7e; --sky-b: #0b1150; --lit: 0.55; }
-.night[data-step="2"] { --sky-a: #0a1046; --sky-b: #040822; --lit: 1; }
+.night[data-step="1"] { --sky-a: #3b44a8; --sky-b: #1a2478; --lit: 0.55; }
+.night[data-step="2"] { --sky-a: #1d2777; --sky-b: #0f1652; --lit: 1; }
 .night[data-step="3"] { --sky-a: #ffd27a; --sky-b: #f08a5d; --lit: 0.3; }
 .scene { position: relative; height: clamp(260px, 38vw, 440px); overflow: hidden; }
 .sky { position: absolute; inset: 0; background: linear-gradient(to top, var(--sky-a), var(--sky-b)); transition: --sky-a 1.2s, --sky-b 1.2s; }
@@ -148,10 +193,10 @@ img { display: block; }
 .night[data-step="1"] .stars { opacity: 0.6; }
 .night[data-step="2"] .stars { opacity: 1; }
 .building { position: absolute; inset: 0; width: 100%; height: 100%; }
-.b-main { fill: #0b1240; }
-.b-far { fill: #151c52; }
+.b-main { fill: #141d4a; }
+.b-far { fill: #222c66; }
 .b-cross { fill: #e8483c; }
-.ground { fill: #0b1240; }
+.ground { fill: #141d4a; }
 .win { fill: var(--gold); opacity: 0.08; transition: opacity 0.9s; }
 .win.lit { opacity: 0.95; }
 .night-copy { margin-top: 3rem; }
@@ -228,7 +273,7 @@ img { display: block; }
 
 /* Footer */
 .foot { padding-block: 2.5rem 3rem; border-top: 1px solid var(--line); display: grid; gap: 0.5rem; font-size: 0.92rem; color: var(--ink-2); }
-.foot nav { display: flex; gap: 1.5rem; margin-bottom: 0.6rem; }
+.foot nav { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin-bottom: 0.6rem; }
 .foot nav a { font-weight: 600; color: var(--ink); text-underline-offset: 3px; }
 
 /* Motion. Everything below runs only when the visitor has not asked for less. */
@@ -251,6 +296,8 @@ img { display: block; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .sky, .orb, .stars, .win, .moments li { transition: none !important; }
+  .ward-in, .ward-out { animation: none; }
+  .lamp, .jack-ext, .jack .socket { transition: none; }
   .names-row { flex-wrap: wrap; width: auto; justify-content: center; padding-inline: 1.25rem; gap: 0.4rem 1.6rem; font-size: 1.15rem; }
   .names-row.rev { display: none; }
   .names { -webkit-mask: none; mask: none; }
@@ -264,6 +311,8 @@ img { display: block; }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; min-height: 0; padding-block: 1.5rem 3rem; gap: 2.5rem; }
   .lede { max-width: none; }
+  .patch { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem 5rem; }
+  .jacks { grid-template-columns: repeat(4, 1fr); gap: 14px 4px; }
   .moments { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .fixes { grid-template-columns: 1fr; gap: 2.5rem; }
   .provinces { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 1.5rem; }
@@ -273,6 +322,10 @@ img { display: block; }
   .top { height: 64px; }
   .top-link { padding: 0.45rem 0.75rem; font-size: 0.95rem; }
   .moments { grid-template-columns: 1fr; gap: 1.5rem; }
+  .jack { padding: 4px 0; gap: 6px; }
+  .jack .socket { --s: 28px; }
+  .jack-name { font-size: 0.78rem; }
+  .jack-ext { font-size: 0.72rem; }
   .nosignal, .plans, .country { padding-block: 5rem; }
   .history { padding: 1.25rem; }
   .num { font-size: 1.35rem; }

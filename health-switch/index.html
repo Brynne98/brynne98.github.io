@@ -7,11 +7,11 @@
 <meta name="description" content="Ward, department and extension numbers for more than 80 South African hospitals. Search and call in two taps, with no signal. Free on iPhone and Android.">
 <meta name="color-scheme" content="light dark">
 <meta name="theme-color" content="#f3f5fb" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#070c2c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#141d4a" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="img/icon-192.png">
 <link rel="apple-touch-icon" href="img/icon-192.png">
 <link rel="preload" href="fonts/bricolage.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 
@@ -45,6 +45,21 @@
       <div class="map" role="img" aria-label="Map of South Africa with a light for each hospital in the app"></div>
       <figcaption class="map-tip" aria-live="polite"><span id="map-name">Tap a light</span></figcaption>
     </figure>
+  </section>
+
+  <!-- Switchboard: a cord patches the headline into the ward it names -->
+  <section class="patch wrap" data-stage aria-labelledby="patch-title">
+    <div class="patch-copy">
+      <p>Pick a ward. Find its extension in two taps, then call.</p>
+      <h2 id="patch-title">
+        <span class="h-lead">Put me through to</span>
+        <span class="ward-line"><span class="ward" aria-live="polite"><span class="ward-in">Maternity</span></span><span class="dot">.</span><span class="socket socket-sm" data-anchor="head" aria-hidden="true"></span></span>
+      </h2>
+    </div>
+    <div class="board" role="group" aria-label="Switchboard. Pick a ward to patch the cord into it.">
+      <ul class="jacks" id="jacks"></ul>
+    </div>
+    <svg class="cords" aria-hidden="true"></svg>
   </section>
 
   <!-- Night shift: one hospital, one night -->
@@ -149,17 +164,18 @@
 
 <footer class="foot wrap">
   <nav aria-label="Help and legal">
-    <a href="https://brynne98.github.io/health-switch/">Support</a>
+    <a href="mailto:brynneprince98@gmail.com">Support</a>
     <a href="https://brynne98.github.io/health-switch/privacy.html">Privacy</a>
     <a href="https://brynne98.github.io/health-switch/terms.html">Terms</a>
+    <a href="https://brynne98.github.io/health-switch/paia.html">PAIA Manual</a>
   </nav>
+  <p>Help or a question: <a href="mailto:brynneprince98@gmail.com">brynneprince98@gmail.com</a>. Wrong number? Open it in the app and tap <b>This number doesn't work</b>.</p>
   <p>The phone numbers on this page are made up. They are not real hospital numbers.</p>
   <p>Map: South African district boundaries. Hospital lights are placed by town, not by street.</p>
   <p>&copy; 2026 Health Switch RSA</p>
 </footer>
 
 <script src="map.js?v=8"></script>
-<script src="main.js?v=8"></script>
-  <script src="../switch.js"></script>
+<script src="main.js?v=9"></script>
 </body>
 </html>
