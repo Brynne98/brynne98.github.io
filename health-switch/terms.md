@@ -1,4 +1,5 @@
 ---
+layout: health-switch-doc
 title: Terms of Use — Health Switch RSA
 ---
 

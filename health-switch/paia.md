@@ -1,4 +1,5 @@
 ---
+layout: health-switch-doc
 title: PAIA Manual — Health Switch RSA
 ---
 

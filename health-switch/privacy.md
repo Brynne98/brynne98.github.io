@@ -1,4 +1,5 @@
 ---
+layout: health-switch-doc
 title: Privacy Policy — Health Switch RSA
 ---
 
