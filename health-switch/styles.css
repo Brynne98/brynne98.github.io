@@ -255,20 +255,6 @@ img { display: block; }
 .provinces dd { margin: 0 0 0.2rem; font: 700 2rem/1 "Bricolage", sans-serif; order: -1; }
 .provinces div { display: flex; flex-direction: column; }
 
-/* Free and Pro */
-.plans { padding-block: 7rem 2rem; }
-.plans h2 { font-size: clamp(2rem, 4vw, 3.2rem); }
-.plan-grid { margin-top: 2.5rem; display: grid; grid-template-columns: 7fr 5fr; gap: 1.25rem; }
-.plan { border-radius: var(--r); padding: 2rem; border: 1px solid var(--line); background: var(--surface); }
-.plan h3 { font-size: 1.6rem; margin-bottom: 0.6rem; }
-.plan p { color: var(--ink-2); max-width: 40ch; }
-.plan .price { font: 700 2rem/1 "Bricolage", sans-serif; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 0.9rem; font-variant-numeric: tabular-nums; }
-.plan .price small { display: block; margin-top: 0.35rem; font: 500 0.95rem "Figtree", sans-serif; letter-spacing: 0; color: var(--ink-2); }
-.plan-pro { background: var(--navy); border-color: var(--navy); color: #fff; }
-.plan-pro h3 { color: var(--gold); }
-.plan-pro p, .plan-pro .price small { color: rgba(255, 255, 255, 0.86); }
-.plan-pro .price { color: #fff; }
-
 /* Download at dawn */
 .dawn { position: relative; overflow: hidden; padding-block: 5rem 7rem; text-align: center; isolation: isolate;
   background: linear-gradient(to top, rgba(244, 183, 64, 0.32), transparent 70%); }
@@ -281,10 +267,18 @@ img { display: block; }
 .dawn .stores { justify-content: center; }
 
 /* Footer */
-.foot { padding-block: 2.5rem 3rem; border-top: 1px solid var(--line); display: grid; gap: 0.5rem; font-size: 0.92rem; color: var(--ink-2); }
-.foot nav { display: flex; flex-wrap: wrap; gap: 0 1.5rem; margin-bottom: 0.2rem; }
-.foot nav a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--ink); text-underline-offset: 3px; }
-.foot p a { display: inline-block; padding-block: 0.8rem; margin-block: -0.8rem; color: var(--ink); text-underline-offset: 3px; }
+.foot { background: var(--surface); border-top: 1px solid var(--line); font-size: 0.95rem; color: var(--ink-2); }
+.foot-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 3rem; padding-block: 3.5rem 2.5rem; }
+.foot-brand { display: grid; align-content: start; gap: 0.5rem; }
+.foot-brand .brand { color: var(--ink); }
+.foot-brand p { max-width: 28ch; }
+.foot-cols { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
+.foot-cols > div { display: flex; flex-direction: column; align-items: flex-start; }
+.foot-h { font: 600 0.8rem "Figtree", sans-serif; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 0.4rem; }
+.foot-cols a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: var(--ink); text-decoration: none; text-underline-offset: 3px; }
+.foot-cols a:hover { text-decoration: underline; }
+.foot-cols p { margin-top: 0.4rem; font-size: 0.9rem; max-width: 26ch; }
+.foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; padding-block: 1.25rem 2rem; border-top: 1px solid var(--line); font-size: 0.85rem; }
 
 /* Motion. Everything below runs only when the visitor has not asked for less. */
 @media (prefers-reduced-motion: no-preference) {
@@ -298,7 +292,6 @@ img { display: block; }
   .nosignal.in .rings span:nth-child(3) { animation-delay: 2.1s; }
   .names-row { animation: drift 90s linear infinite; }
   .names-row.rev { animation-direction: reverse; animation-duration: 110s; }
-  .names:hover .names-row { animation-play-state: paused; }
   @supports (animation-timeline: view()) {
     .dawn-sun { animation: rise linear both; animation-timeline: view(); animation-range: entry 0% cover 60%; }
   }
@@ -328,7 +321,7 @@ img { display: block; }
   .nosignal { grid-template-columns: 1fr; gap: 3rem; }
   .phone { width: min(260px, 80%); }
   .provinces { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 1.5rem; }
-  .plan-grid { grid-template-columns: 1fr; }
+  .foot-top { grid-template-columns: 1fr; gap: 2rem; }
 }
 @media (max-width: 560px) {
   .top { height: 64px; }
@@ -338,8 +331,8 @@ img { display: block; }
   .jack .socket { --s: 28px; }
   .jack-name { font-size: 0.78rem; }
   .jack-ext { font-size: 0.72rem; }
-  .nosignal, .plans, .country { padding-block: 5rem; }
-  .plans { padding-bottom: 2rem; }
+  .nosignal, .country { padding-block: 5rem; }
+  .foot-cols { grid-template-columns: 1fr 1fr; row-gap: 1.5rem; }
   .history { padding: 1.25rem; }
   .num { font-size: 1.35rem; }
   .store { flex: 1 1 180px; justify-content: center; }
